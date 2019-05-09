@@ -14,21 +14,20 @@ import java.util.zip.Inflater;
 public class CustomAdapter extends BaseAdapter {
     Context context;
 
-    Reiseziel reiseziele[];
+
     String Land[];
     String Stadt[];
     LayoutInflater inflter;
 
-    public CustomAdapter(Context applicationContext, Reiseziel[] reiseziele) {
+    public CustomAdapter(Context applicationContext, String[] Land, String[] Stadt) {
         this.context = context;
-        this.reiseziele = reiseziele;
+        this.Land = Land;
+        this.Stadt = Stadt;
 
         inflter = (LayoutInflater.from(applicationContext));
     }
 
-    for (int i = 0; i < reiseziele.length; i++){
 
-    }
     @Override
     public int getCount() {
         return Land.length;
@@ -52,4 +51,5 @@ public class CustomAdapter extends BaseAdapter {
         Stadt_view.setText(Stadt[i]);
         return view;
     }
+
 }
