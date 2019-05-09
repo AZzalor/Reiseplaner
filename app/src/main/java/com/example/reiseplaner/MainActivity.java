@@ -12,14 +12,15 @@ public class MainActivity extends AppCompatActivity {
 
     ListView simpleList;
     String countryList[] = {"India", "China", "Australia", "Portugle", "America", "NewZealand"};
-
+    Reiseziel reiseziele[] = {
+            new Reiseziel("Deutschland","Berlin","","",""),
+           new Reiseziel("Frankreich","Paris","","","")
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         simpleList = findViewById(R.id.geplanteReiseListe);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>
-                (this, R.layout.activity_listview, R.id.textView, countryList);
-        simpleList.setAdapter(arrayAdapter);
+       CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(),);
     }
 }

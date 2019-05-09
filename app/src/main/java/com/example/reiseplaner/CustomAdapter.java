@@ -13,19 +13,21 @@ import java.util.zip.Inflater;
 
 public class CustomAdapter extends BaseAdapter {
     Context context;
+
+    Reiseziel reiseziele[];
     String Land[];
     String Stadt[];
-    String Objekt[];
-    String Datum[];
     LayoutInflater inflter;
 
-    public CustomAdapter(Context applicationContext, String[] Land, String[] Stadt, String[] Objekt, String[] Datum) {
+    public CustomAdapter(Context applicationContext, Reiseziel[] reiseziele) {
         this.context = context;
-        this.Land = Land;
-        this.Stadt = Stadt;
-        this.Objekt = Objekt;
-        this.Datum = Datum;
+        this.reiseziele = reiseziele;
+
         inflter = (LayoutInflater.from(applicationContext));
+    }
+
+    for (int i = 0; i < reiseziele.length; i++){
+
     }
     @Override
     public int getCount() {
@@ -40,5 +42,14 @@ public class CustomAdapter extends BaseAdapter {
     @Override
     public long getItemId(int i) {
         return 0;
+    }
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        view = inflter.inflate(R.layout.activity_listview, null);
+        TextView Land_view = (TextView) view.findViewById(R.id.textview_land);
+        TextView Stadt_view = (TextView) view.findViewById(R.id.textView_stadt);
+        Land_view.setText(Land[i]);
+        Stadt_view.setText(Stadt[i]);
+        return view;
     }
 }
