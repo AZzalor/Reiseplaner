@@ -6,26 +6,32 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:textSize="25sp"
         android:id="@+id/textView_stadt"
-        android:layout_width="wrap_content"
+        android:layout_width="327dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_marginLeft="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="27dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:text="TextView"
+        android:textSize="25sp" />
 
     <TextView
-        android:textSize="25sp"
         android:id="@+id/textView_land"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView_stadt"
+        android:layout_width="327dp"
+        android:layout_height="81dp"
         android:layout_alignStart="@+id/textView_stadt"
-        android:layout_marginTop="37dp"
-        android:text="TextView"
+        android:layout_alignLeft="@+id/textView_stadt"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:text="TextView"
+        android:textSize="25sp" />
 </RelativeLayout>
