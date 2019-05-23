@@ -12,6 +12,7 @@ public class Reiseziel {
     String Datum;
     String Beschreibung;
     int Bewertung;
+    boolean visited;
 
     // Getter
     public String getLand() {
@@ -45,26 +46,32 @@ public class Reiseziel {
 
     // Setter
     public void setLand(String land) {
+
         Land = land;
     }
 
     public void setStadt(String stadt) {
+
         Stadt = stadt;
     }
 
     public void setObjekt(String objekt) {
+
         Objekt = objekt;
     }
 
     public void setDatum(String datum) {
+
         Datum = datum;
     }
 
     public void setBeschreibung(String beschreibung) {
+
         Beschreibung = beschreibung;
     }
 
     public void setBewertung(int bewertung) {
+
         Bewertung = bewertung;
     }
 
@@ -78,6 +85,14 @@ public class Reiseziel {
         this.Objekt = Objekt;
         this.Datum = Datum;
         this.Beschreibung = Beschreibung;
+        this.visited = false;
+    }
+
+    public void changeState() {
+        if (visited = false) {
+            visited = true;
+        } else
+            visited = false;
     }
 
 
