@@ -13,7 +13,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
+
+    DatabaseHelper myDB;
 
     String[] land = {"Deutschland", "Frankreich"};
     String[] stadt = {"Zweibrücken", "Paris"};
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        myDB = new DatabaseHelper(this);
 
         ListView listView = (ListView) findViewById(R.id.geplanteReiseListe);
 
