@@ -76,4 +76,5 @@ public class Reiseziel {
         this.Beschreibung = Beschreibung;
     }
 
+
 }
