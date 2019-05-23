@@ -15,13 +15,23 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] land = {"Deutschland", "Frankreich"};
-    String[] stadt = {"Zweibrücken", "Paris"};
+    private ArrayList<String> land = new ArrayList<>();
+    private ArrayList<String> stadt = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Reiseziel nr1 = new Reiseziel("Holland", "Amsterdam", "", "", "");
+        Reiseziel nr2 = new Reiseziel("Testland", "Teststadt", "", "", "");
+        land.add("Deutschland");
+        stadt.add("Zweibrücken");
+        land.add(nr1.Land);
+        stadt.add(nr1.Stadt);
+
+        fillData(nr2);
 
         ListView listView = (ListView) findViewById(R.id.geplanteReiseListe);
 
@@ -29,10 +39,16 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(customAdapter);
     }
 
+    private void fillData(Reiseziel reiseziel){
+        land.add(reiseziel.Land);
+        stadt.add(reiseziel.Stadt);
+    }
+
+
     class CustomAdapter extends BaseAdapter {
         @Override
         public int getCount() {
-            return land.length;
+            return land.size();
         }
 
         @Override
@@ -51,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
             TextView textView_stadt = (TextView)convertView.findViewById(R.id.textView_stadt);
             TextView textView_land = (TextView)convertView.findViewById(R.id.textView_land);
 
-            textView_land.setText(land[position]);
-            textView_stadt.setText(stadt[position]);
+            textView_land.setText(land.get(position));
+            textView_stadt.setText(stadt.get(position));
 
             return convertView;
         }

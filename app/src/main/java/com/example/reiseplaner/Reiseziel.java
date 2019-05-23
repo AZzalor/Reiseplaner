@@ -19,18 +19,22 @@ public class Reiseziel {
     }
 
     public String getStadt() {
+
         return Stadt;
     }
 
     public String getObjekt() {
+
         return Objekt;
     }
 
     public String getDatum() {
+
         return Datum;
     }
 
     public String getBeschreibung() {
+
         return Beschreibung;
     }
 
