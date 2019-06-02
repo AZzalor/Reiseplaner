@@ -15,8 +15,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
 
-    DatabaseHelper myDB;
-
+    DatabaseHelper mDatabaseHelper;
     private ArrayList<String> land = new ArrayList<>();
     private ArrayList<String> stadt = new ArrayList<>();
 
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        myDB = new DatabaseHelper(this);
+        mDatabaseHelper = new DatabaseHelper(this);
 
         Reiseziel nr1 = new Reiseziel("Holland", "Amsterdam", "", "", "");
         Reiseziel nr2 = new Reiseziel("Testland", "Teststadt", "", "", "");
