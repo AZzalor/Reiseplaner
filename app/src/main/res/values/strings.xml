@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Reiseplaner</string>
+    <string name="createLandTextView">Land</string>
+    <string name="createStadtTextView">Stadt</string>
+    <string name="createObjektTextView">Objekt</string>
+    <string name="createBeschreibungTextView">Beschreibung</string>
+    <string name="createOkButton">OK</string>
+    <string name="createAbbrechenButton">Abbrechen</string>
+
+
 </resources>
