@@ -19,17 +19,17 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
+            android:background="#A2B5CD"
             android:text="Liste 1"
-            android:textColor="@color/colorAccent" />
+            android:textColor="#2F4F4F" />
         <Button
             android:id="@+id/list2"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
+            android:background="#A2B5CD"
             android:text="Liste 2"
-            android:textColor="@color/colorAccent" />
+            android:textColor="#2F4F4F" />
     </LinearLayout>
 </RelativeLayout>
