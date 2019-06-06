@@ -1,5 +1,6 @@
 package com.example.reiseplaner;
 
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,20 +22,15 @@ public class MainActivity extends AppCompatActivity{
     private ArrayList<String> stadt = new ArrayList<>();
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mDatabaseHelper = new DatabaseHelper(this);
 
-        Reiseziel nr1 = new Reiseziel("Holland", "Amsterdam", "", "", "");
-        Reiseziel nr2 = new Reiseziel("Testland", "Teststadt", "", "", "");
-        land.add("Deutschland");
-        stadt.add("Zweibrücken");
-        land.add(nr1.Land);
-        stadt.add(nr1.Stadt);
-
-        fillData(nr2);
+        boolean b = mDatabaseHelper.addData("Deutschland", "Saarbrücken", "", "");
+        fillData();
 
         ListView listView = (ListView) findViewById(R.id.geplanteReiseListe);
 
@@ -41,9 +38,16 @@ public class MainActivity extends AppCompatActivity{
         listView.setAdapter(customAdapter);
     }
 
-    private void fillData(Reiseziel reiseziel){
-        land.add(reiseziel.Land);
-        stadt.add(reiseziel.Stadt);
+    private void fillData(){
+        Cursor data = mDatabaseHelper.getData();
+        while(data.moveToNext()){
+            land.add(data.getString(1));
+            stadt.add(data.getString(2));
+        }
+    }
+
+    public void AddData(String Land, String Stadt, String Objekt, String Beschreibung){
+        boolean insertData = mDatabaseHelper.addData(Land, Stadt,Objekt, Beschreibung);
     }
 
 
