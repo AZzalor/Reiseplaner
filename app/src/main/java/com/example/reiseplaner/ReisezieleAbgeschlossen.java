@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -16,6 +17,8 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
     private ArrayList<String> land = new ArrayList<>();
     private ArrayList<String> stadt = new ArrayList<>();
     DatabaseHelper mDatabaseHelper;
+
+    private Button goBack;
 
 
     @Override
@@ -28,6 +31,17 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
 
         CustomAdapter customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
+
+
+        goBack = (Button) findViewById(R.id.list2);
+
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                finish();
+            }
+        });
     }
 
     private void fillData(){
