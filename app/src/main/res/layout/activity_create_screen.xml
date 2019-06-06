@@ -21,6 +21,7 @@
         tools:layout_editor_absoluteY="26dp">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/LandInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/createLandTextView" />
@@ -41,6 +42,7 @@
         tools:layout_editor_absoluteY="89dp">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/StadtInput"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/createStadtTextView" />
@@ -61,6 +63,7 @@
         tools:layout_editor_absoluteY="156dp">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/ObjektInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/createObjektTextView" />
@@ -81,6 +84,7 @@
         tools:layout_editor_absoluteY="227dp">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/BeschreibungInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/createBeschreibungTextView" />

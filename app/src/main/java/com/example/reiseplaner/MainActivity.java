@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void AddData(String Land, String Stadt, String Objekt, String Beschreibung){
-        boolean insertData = mDatabaseHelper.addData(Land, Stadt,Objekt, Beschreibung);
+        mDatabaseHelper.addData(Land, Stadt,Objekt, Beschreibung);
     }
 
 
