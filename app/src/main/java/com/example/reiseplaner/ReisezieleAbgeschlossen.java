@@ -1,5 +1,6 @@
 package com.example.reiseplaner;
 
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,21 +15,27 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
 
     private ArrayList<String> land = new ArrayList<>();
     private ArrayList<String> stadt = new ArrayList<>();
+    DatabaseHelper mDatabaseHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reiseziele_abgeschlossen);
+        mDatabaseHelper = new DatabaseHelper(this);
 
-        ListView listView = (ListView) findViewById(R.id.abgeschlosseneReiseListe);
+        ListView listView = (ListView) findViewById(R.id.geplanteReiseListe);
 
         CustomAdapter customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
     }
 
-    private void fillData(Reiseziel reiseziel){
-        land.add(reiseziel.Land);
-        stadt.add(reiseziel.Stadt);
+    private void fillData(){
+        Cursor data = mDatabaseHelper.getData();
+        while(data.moveToNext()){
+            land.add(data.getString(1));
+            stadt.add(data.getString(2));
+        }
     }
 
     class CustomAdapter extends BaseAdapter {
