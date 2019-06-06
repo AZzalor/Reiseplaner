@@ -64,6 +64,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public boolean updateData(String mId, String mLand, String mStadt, String mObjekt, String mBeschreibung){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL0, mId);
+        contentValues.put(COL1, mLand);
+        contentValues.put(COL2, mStadt);
+        contentValues.put(COL3, mObjekt);
+        contentValues.put(COL4, mBeschreibung);
+        db.update(TABLE_NAME, contentValues, "ID = ?", new String[] {mId});
+        return true;
+    }
+
+    public Integer deleteData(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, "ID = ?", new String[] {id});
+    }
+
     /**
      * Gibt alle Daten der Datenbank aus
      * @return
@@ -74,4 +91,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor data = db.rawQuery(query, null);
         return data;
     }
+
+
 }
