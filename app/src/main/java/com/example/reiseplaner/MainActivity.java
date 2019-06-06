@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity{
     DatabaseHelper mDatabaseHelper;
     private ArrayList<String> land = new ArrayList<>();
     private ArrayList<String> stadt = new ArrayList<>();
-    private Button switchActivityButton;
 
 
 
@@ -40,15 +39,8 @@ public class MainActivity extends AppCompatActivity{
         CustomAdapter customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
 
-        switchActivityButton = (Button) findViewById(R.id.list1);
 
-        switchActivityButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                switchActivity();
-            }
-        });
     }
 
     private void fillData(){

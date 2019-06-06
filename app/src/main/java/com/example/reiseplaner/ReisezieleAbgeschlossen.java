@@ -18,7 +18,6 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
     private ArrayList<String> stadt = new ArrayList<>();
     DatabaseHelper mDatabaseHelper;
 
-    private Button goBack;
 
 
     @Override
@@ -33,15 +32,7 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
         listView.setAdapter(customAdapter);
 
 
-        goBack = (Button) findViewById(R.id.list2);
 
-        goBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                finish();
-            }
-        });
     }
 
     private void fillData(){
