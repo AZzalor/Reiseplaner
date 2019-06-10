@@ -7,5 +7,12 @@
     <string name="createOkButton">OK</string>
     <string name="createAbbrechenButton">Abbrechen</string>
 
+    <string name="detailLandTextView">Land</string>
+    <string name="detailStadtTextView">Stadt</string>
+    <string name="detailObjektTextView">Objekt</string>
+    <string name="detailBeschreibungTextView">Beschreibung</string>
+    <string name="detailOkButton">OK</string>
+    <string name="detailAbbrechenButton">Abbrechen</string>
+
 
 </resources>
