@@ -47,7 +47,7 @@ public class CreateScreen extends AppCompatActivity {
     // Actionbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_actionbar, menu);
+        getMenuInflater().inflate(R.menu.menu_actionbar_createscreen, menu);
         return true;
     }
 

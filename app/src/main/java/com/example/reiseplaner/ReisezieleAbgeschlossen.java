@@ -77,7 +77,7 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_actionbar, menu);
+        getMenuInflater().inflate(R.menu.menu_actionbar_abgreisen, menu);
         return true;
     }
 
