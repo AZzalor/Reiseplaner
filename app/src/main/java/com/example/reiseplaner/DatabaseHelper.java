@@ -18,7 +18,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL2 = "STADT";
     public static final String COL3 = "OBJEKT";
     public static final String COL4 = "BESCHREIBUNG";
-    public static final String COL5 = "BEWERTUNG";
+    public static final String COL5 = "ANREISE";
+    public static final String COL6 = "ABREISE";
+    public static final String COL7 = "BEWERTUNG";
 
 
 
@@ -34,6 +36,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "STADT TEXT, " +
                 "OBJEKT TEXT, " +
                 "BESCHREIBUNG TEXT, " +
+                "ANREISE DATE," +
+                "ABREISE DATE," +
                 "BEWERTUNG INTEGER)";
         db.execSQL(createTable);
     }
