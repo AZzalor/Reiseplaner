@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -89,5 +91,28 @@ public class MainActivity extends AppCompatActivity{
 
             return convertView;
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_actionbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.abg_reiseziele:
+                startActivity(new Intent(this, ReisezieleAbgeschlossen.class));
+                return true;
+
+            case R.id.add:
+                startActivity(new Intent(this, CreateScreen.class));
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

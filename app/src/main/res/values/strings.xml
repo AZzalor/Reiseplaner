@@ -7,5 +7,9 @@
     <string name="createOkButton">OK</string>
     <string name="createAbbrechenButton">Abbrechen</string>
 
+    <!-- Action Bar Strings -->
+    <string name="action_reiseziele">Reiseziele</string>
+    <string name="action_abg_reiseziele">abgeschlossene Reiseziele</string>
+    <string name="action_add">Add</string>
 
 </resources>
