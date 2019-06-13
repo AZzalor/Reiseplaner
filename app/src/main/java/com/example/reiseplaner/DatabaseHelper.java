@@ -21,6 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL5 = "ANREISE";
     public static final String COL6 = "ABREISE";
     public static final String COL7 = "BEWERTUNG";
+    public static final String COL8 = "ABGESCHLOSSEN";
 
 
 
@@ -36,9 +37,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "STADT TEXT, " +
                 "OBJEKT TEXT, " +
                 "BESCHREIBUNG TEXT, " +
-                "ANREISE DATE," +
-                "ABREISE DATE," +
-                "BEWERTUNG INTEGER)";
+                "ANREISE TEXT," +
+                "ABREISE TEXT," +
+                "BEWERTUNG INTEGER," +
+                "ABGESCHLOSSEN INTEGER)";
         db.execSQL(createTable);
     }
 
@@ -48,15 +50,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addData(String mLand, String mStadt, String mObjekt, String mBeschreibung) {
+    public boolean addData(String mLand, String mStadt, String mObjekt, String mBeschreibung, String mAnreise, String mAbreise) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL1, mLand);
         contentValues.put(COL2, mStadt);
         contentValues.put(COL3, mObjekt);
         contentValues.put(COL4, mBeschreibung);
+        contentValues.put(COL5, mAnreise);
+        contentValues.put(COL6, mAbreise);
 
-        Log.d(TAG, "addData: Adding " + mLand + " + " + mStadt + " + " + mObjekt + " + " + mBeschreibung + " to " + TABLE_NAME);
+        Log.d(TAG, "addData: Adding " + mLand + " + " + mStadt + " + " + mObjekt + " + " + mBeschreibung + " + " + mAnreise + " + " + mAbreise + " to " + TABLE_NAME);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
 
@@ -68,7 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean updateData(String mId, String mLand, String mStadt, String mObjekt, String mBeschreibung){
+    public boolean updateData(String mId, String mLand, String mStadt, String mObjekt, String mBeschreibung, String mAnreise, String mAbreise, int mBewertung, int mAbgeschlossen){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL0, mId);
@@ -76,6 +80,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL2, mStadt);
         contentValues.put(COL3, mObjekt);
         contentValues.put(COL4, mBeschreibung);
+        contentValues.put(COL5, mAnreise);
+        contentValues.put(COL6, mAbreise);
+        contentValues.put(COL7, mBewertung);
+        contentValues.put(COL8, mAbgeschlossen);
         db.update(TABLE_NAME, contentValues, "ID = ?", new String[] {mId});
         return true;
     }
