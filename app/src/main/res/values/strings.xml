@@ -1,22 +1,20 @@
 <resources>
-    <string name="app_name">Reiseplaner</string>
-    <string name="createLandTextView">Land</string>
-    <string name="createStadtTextView">Stadt</string>
-    <string name="createObjektTextView">Objekt</string>
-    <string name="createBeschreibungTextView">Beschreibung</string>
-    <string name="createOkButton">OK</string>
-    <string name="createAbbrechenButton">Abbrechen</string>
-
-    <string name="detailLandTextView">Land</string>
-    <string name="detailStadtTextView">Stadt</string>
-    <string name="detailObjektTextView">Objekt</string>
-    <string name="detailBeschreibungTextView">Beschreibung</string>
-    <string name="detailOkButton">OK</string>
-    <string name="detailAbbrechenButton">Abbrechen</string>
 
     <!-- Action Bar Strings -->
     <string name="action_reiseziele">Reiseziele</string>
     <string name="action_abg_reiseziele">abgeschlossene Reiseziele</string>
     <string name="action_add">Add</string>
+
+    <!-- Texte für Screens -->
+    <string name="land">Land</string>
+    <string name="stadt">Stadt</string>
+    <string name="objekt">Sehenswürdigkeit</string>
+    <string name="beschreibung">Beschreibung</string>
+    <string name="anreise">Anreise</string>
+    <string name="abreise">Abreise</string>
+    <string name="bewertung">Bewertung</string>
+
+    <string name="okButton">OK</string>
+    <string name="abbrechenButton">Abbrechen</string>
 
 </resources>
