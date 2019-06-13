@@ -1,8 +1,11 @@
 package com.example.reiseplaner;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -70,5 +73,28 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
 
             return convertView;
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_actionbar_abgreisen, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.reiseziele:
+                startActivity(new Intent(this, MainActivity.class));
+                return true;
+
+            case R.id.add:
+                startActivity(new Intent(this, CreateScreen.class));
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

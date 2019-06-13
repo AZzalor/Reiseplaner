@@ -7,12 +7,9 @@
     <string name="createOkButton">OK</string>
     <string name="createAbbrechenButton">Abbrechen</string>
 
-    <string name="detailLandTextView">Land</string>
-    <string name="detailStadtTextView">Stadt</string>
-    <string name="detailObjektTextView">Objekt</string>
-    <string name="detailBeschreibungTextView">Beschreibung</string>
-    <string name="detailOkButton">OK</string>
-    <string name="detailAbbrechenButton">Abbrechen</string>
-
+    <!-- Action Bar Strings -->
+    <string name="action_reiseziele">Reiseziele</string>
+    <string name="action_abg_reiseziele">abgeschlossene Reiseziele</string>
+    <string name="action_add">Add</string>
 
 </resources>
