@@ -32,7 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTable = "create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        String createTable = "create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY NOT NULL, " +
                 "LAND TEXT, " +
                 "STADT TEXT, " +
                 "OBJEKT TEXT, " +
