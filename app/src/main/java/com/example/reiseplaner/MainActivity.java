@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         mDatabaseHelper = new DatabaseHelper(this);
 
-        //boolean b = mDatabaseHelper.addData("Deutschland", "Saarbrücken", "", "");
         fillData();
 
         ListView listView = (ListView) findViewById(R.id.geplanteReiseListe);
@@ -55,12 +54,6 @@ public class MainActivity extends AppCompatActivity{
 
     public void AddData(String Land, String Stadt, String Objekt, String Beschreibung){
         mDatabaseHelper.addData(Land, Stadt,Objekt, Beschreibung);
-    }
-
-    private void switchActivity() {
-
-        Intent intent = new Intent(this, ReisezieleAbgeschlossen.class);
-        startActivity(intent);
     }
 
 

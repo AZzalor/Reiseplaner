@@ -29,6 +29,8 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
         setContentView(R.layout.activity_reiseziele_abgeschlossen);
         mDatabaseHelper = new DatabaseHelper(this);
 
+        fillData();
+
         ListView listView = (ListView) findViewById(R.id.geplanteReiseListe);
 
         CustomAdapter customAdapter = new CustomAdapter();
