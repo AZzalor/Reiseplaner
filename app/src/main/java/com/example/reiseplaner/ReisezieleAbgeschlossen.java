@@ -31,7 +31,7 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
 
         fillData();
 
-        ListView listView = (ListView) findViewById(R.id.geplanteReiseListe);
+        ListView listView = (ListView) findViewById(R.id.abgeschlosseneReiseListe);
 
         CustomAdapter customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
