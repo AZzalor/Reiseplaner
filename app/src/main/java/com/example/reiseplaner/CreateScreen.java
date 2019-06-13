@@ -15,6 +15,8 @@ public class CreateScreen extends AppCompatActivity {
     String land;
     String objekt;
     String beschreibung;
+    String anreise;
+    String abreise;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,23 +27,26 @@ public class CreateScreen extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                EditText landText = findViewById(R.id.LandInput);
+                EditText landText = findViewById(R.id.createlandEditText);
                 land = landText.getText().toString();
-                EditText stadtText = findViewById(R.id.StadtInput);
+                EditText stadtText = findViewById(R.id.createstadtEditText);
                 stadt = stadtText.getText().toString();
-                EditText objektText = findViewById(R.id.ObjektInput);
+                EditText objektText = findViewById(R.id.createobjektEditText);
                 objekt = objektText.getText().toString();
-                EditText beschreibungText = findViewById(R.id.BeschreibungInput);
+                EditText beschreibungText = findViewById(R.id.createbeschreibungEditText);
                 beschreibung = beschreibungText.getText().toString();
-
-                createNewReiseziel(land, stadt, objekt, beschreibung);
+                EditText anreiseText = findViewById(R.id.createanreiseEditText);
+                anreise = anreiseText.getText().toString();
+                EditText abreiseText = findViewById(R.id.createabreiseEditText);
+                abreise = abreiseText.getText().toString();
+                createNewReiseziel(land, stadt, objekt, beschreibung, anreise, abreise);
             }
         });
 
     }
 
-    private void createNewReiseziel (String Land, String Stadt, String Objekt, String Beschreibung){
-        mDatabaseHelper.addData(Land, Stadt,Objekt, Beschreibung);
+    private void createNewReiseziel (String Land, String Stadt, String Objekt, String Beschreibung, String Anreise, String Abreise){
+        mDatabaseHelper.addData(Land, Stadt,Objekt, Beschreibung, Anreise, Abreise);
     }
 
     // Actionbar

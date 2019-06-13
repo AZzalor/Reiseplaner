@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -40,6 +41,17 @@ public class MainActivity extends AppCompatActivity{
         CustomAdapter customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
 
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(MainActivity.this, DetailScreen.class);
+
+                intent.putExtra("ID", position);
+                startActivity(intent);
+            }
+        });
 
 
     }
@@ -78,6 +90,8 @@ public class MainActivity extends AppCompatActivity{
             convertView = getLayoutInflater().inflate(R.layout.customlayout, null);
             TextView textView_stadt = (TextView)convertView.findViewById(R.id.textView_stadt);
             TextView textView_land = (TextView)convertView.findViewById(R.id.textView_land);
+
+
 
             textView_land.setText(land.get(position));
             textView_stadt.setText(stadt.get(position));
