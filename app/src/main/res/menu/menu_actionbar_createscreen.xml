@@ -4,13 +4,13 @@
 
     <item
         android:id="@+id/reiseziele"
-        android:icon="@mipmap/Reiseliste"
+        android:icon="@mipmap/reiseliste"
         android:title="@string/action_reiseziele"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/abg_reiseziele"
-        android:icon="@mipmap/abg_Reiseliste"
+        android:icon="@mipmap/abg_reiseliste"
         android:title="@string/action_abg_reiseziele"
         app:showAsAction="always"/>
 

@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/abg_reiseziele"
-        android:icon="@mipmap/abg_Reiseliste"
+        android:icon="@mipmap/abg_reiseliste"
         android:title="@string/action_abg_reiseziele"
         app:showAsAction="always"/>
 
