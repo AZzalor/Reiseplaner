@@ -16,5 +16,6 @@
 
     <string name="okButton">OK</string>
     <string name="abbrechenButton">Abbrechen</string>
+    <string name="abgeschlossenButton">Reise abgeschlossen!</string>
 
 </resources>

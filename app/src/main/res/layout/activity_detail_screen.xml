@@ -1,109 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailScreen">
 
-    <TextView
-        android:id="@+id/detailLandTextView"
-        android:layout_width="71dp"
-        android:layout_height="42dp"
-        android:text="@string/detailLandTextView"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="26dp" />
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="310dp"
+    <LinearLayout
+        android:id="@+id/detaillandLinearLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="26dp">
+        android:orientation="vertical">
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/detailLandInput"
+        <EditText
+            android:id="@+id/detaillandEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/detailLandTextView" />
-    </android.support.design.widget.TextInputLayout>
+            android:text="@string/land"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:paddingLeft="10dp"
+            android:inputType="text"/>
 
-    <TextView
-        android:id="@+id/detailStadtTextView"
-        android:layout_width="70dp"
-        android:layout_height="38dp"
-        android:text="@string/detailStadtTextView"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="89dp" />
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="319dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="89dp">
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/detailStadtInput"
+        <EditText
+            android:id="@+id/detailstadtEditText"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/stadt"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:paddingLeft="10dp"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/detailobjektEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/objekt"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:paddingLeft="10dp"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/detailbeschreibungEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/beschreibung"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:paddingLeft="10dp"
+            android:inputType="text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/zeitraumLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detaillandLinearLayout"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/detailanreiseEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.50"
+            android:text="@string/anreise"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textAlignment="center"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/detailabreiseEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.50"
+            android:text="@string/anreise"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textAlignment="center"
+            android:inputType="text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bewertungReiseLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/zeitraumLayout">
+
+        <TextView
+            android:id="@+id/bewertung"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:hint="@string/createStadtTextView" />
-    </android.support.design.widget.TextInputLayout>
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="25dp"
+            android:text="@string/bewertung"
+            android:textSize="14sp"
+            android:gravity="bottom|left" />
 
-    <TextView
-        android:id="@+id/detailObjektTextView"
-        android:layout_width="wrap_content"
+        <EditText
+            android:layout_width="83dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="15dp"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detailButtonsLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/detailObjektTextView"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="156dp" />
+        android:layout_below="@id/bewertungReiseLayout"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal">
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="330dp"
+        <Button
+            android:id="@+id/detailOkButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.50"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="30dp"
+            android:text="@string/okButton"/>
+
+        <Button
+            android:id="@+id/detailAbbrechenButton"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.50"
+            android:layout_marginRight="15dp"
+            android:text="@string/abbrechenButton"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/abgeschlossenLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="73dp"
-        tools:layout_editor_absoluteY="156dp">
+        android:orientation="vertical"
+        android:layout_below="@id/detailButtonsLayout">
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/detailObjektInput"
+        <Button
+            android:id="@+id/abgeschlossenButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/detailObjektTextView" />
-    </android.support.design.widget.TextInputLayout>
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/abgeschlossenButton"
+            />
 
-    <TextView
-        android:id="@+id/createBeschreibungTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detailBeschreibungTextView"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="227dp" />
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="326dp"
-        android:layout_height="392dp"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="227dp">
+    </LinearLayout>
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/detailBeschreibungInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/detailBeschreibungTextView" />
-    </android.support.design.widget.TextInputLayout>
-
-    <Button
-        android:id="@+id/detailcreateOkButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detailOkButton"
-        tools:layout_editor_absoluteX="217dp"
-        tools:layout_editor_absoluteY="645dp" />
-
-    <Button
-        android:id="@+id/createAbbrechenButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detailAbbrechenButton"
-        tools:layout_editor_absoluteX="110dp"
-        tools:layout_editor_absoluteY="645dp" />
-
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

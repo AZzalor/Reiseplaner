@@ -7,13 +7,13 @@
     tools:context=".CreateScreen">
 
     <LinearLayout
-        android:id="@+id/landLinearLayout"
+        android:id="@+id/createlandLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         
         <EditText
-            android:id="@+id/landEditText"
+            android:id="@+id/createlandEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/land"
@@ -24,7 +24,7 @@
             android:inputType="text"/>
 
         <EditText
-            android:id="@+id/stadtEditText"
+            android:id="@+id/createstadtEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/stadt"
@@ -35,7 +35,7 @@
             android:inputType="text"/>
 
         <EditText
-            android:id="@+id/objektEditText"
+            android:id="@+id/createobjektEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/objekt"
@@ -46,7 +46,7 @@
             android:inputType="text"/>
 
         <EditText
-            android:id="@+id/beschreibungEditText"
+            android:id="@+id/createbeschreibungEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/beschreibung"
@@ -59,15 +59,15 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/zeitraumLayout"
+        android:id="@+id/createzeitraumLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/landLinearLayout"
+        android:layout_below="@id/createlandLinearLayout"
         android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/anreiseEditText"
+            android:id="@+id/createanreiseEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.50"
@@ -79,7 +79,7 @@
             android:inputType="text"/>
 
         <EditText
-            android:id="@+id/abreiseEditText"
+            android:id="@+id/createabreiseEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.50"
@@ -93,13 +93,15 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/createButtonLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/zeitraumLayout"
+        android:layout_below="@id/createzeitraumLayout"
         android:layout_marginTop="100dp"
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/createOkButton"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.50"
@@ -108,6 +110,7 @@
             android:text="@string/okButton"/>
 
         <Button
+            android:id="@+id/createAbbrechenButton"
             android:layout_width="150dp"
             android:layout_height="match_parent"
             android:layout_weight="0.50"
