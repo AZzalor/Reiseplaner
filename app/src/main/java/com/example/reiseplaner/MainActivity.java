@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity{
         }
     }
 
-    public void AddData(String Land, String Stadt, String Objekt, String Beschreibung){
-        mDatabaseHelper.addData(Land, Stadt,Objekt, Beschreibung);
+    public void AddData(String Land, String Stadt, String Objekt, String Beschreibung,String Anreise, String Abreise){
+        mDatabaseHelper.addData(Land, Stadt,Objekt, Beschreibung, Anreise, Abreise);
     }
 
 
