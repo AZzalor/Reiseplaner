@@ -39,7 +39,7 @@ public class DetailScreen extends AppCompatActivity {
     }
 
     private void fillData() {
-        Cursor data = mDatabaseHelper.getData(id);
+        Cursor data = mDatabaseHelper.getData("Zweibrücken");
         land = data.getString(1);
         stadt = data.getString(2);
         objekt = data.getString(3);

@@ -25,14 +25,16 @@ public class MainActivity extends AppCompatActivity{
     DatabaseHelper mDatabaseHelper;
     private ArrayList<String> land = new ArrayList<>();
     private ArrayList<String> stadt = new ArrayList<>();
-
-
+    private ArrayList<Integer> idArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mDatabaseHelper = new DatabaseHelper(this);
+
+        //mDatabaseHelper.addData("Deutschland", "Zweibrücken", "Schloss", "", "", "");
+        //mDatabaseHelper.addData("Deutschland", "Saarbrücken", "", "", "", "");
 
         fillData();
 
@@ -47,8 +49,8 @@ public class MainActivity extends AppCompatActivity{
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(MainActivity.this, DetailScreen.class);
-
-                intent.putExtra("ID", position);
+                int currentID = idArrayList.get(position);
+                intent.putExtra("ID", currentID);
                 startActivity(intent);
             }
         });
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity{
         while(data.moveToNext()){
             land.add(data.getString(1));
             stadt.add(data.getString(2));
+            idArrayList.add(data.getInt(0));
         }
     }
 
