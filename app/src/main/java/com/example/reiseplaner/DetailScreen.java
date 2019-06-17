@@ -12,6 +12,7 @@ public class DetailScreen extends AppCompatActivity {
     private String land;
     private String stadt;
     private String objekt;
+    private String beschreibung;
     private String anreise;
     private String abreise;
     private int bewertung = 0;
@@ -23,7 +24,7 @@ public class DetailScreen extends AppCompatActivity {
         setContentView(R.layout.activity_detail_screen);
         mDatabaseHelper = new DatabaseHelper(this);
 
-        id = getIntent().getIntExtra("ID", 1);
+        id = getIntent().getIntExtra("ID", 0);
 
         fillData();
 
@@ -33,6 +34,13 @@ public class DetailScreen extends AppCompatActivity {
         stadtEditText.setText(stadt);
         EditText objektEditText = findViewById(R.id.detailobjektEditText);
         objektEditText.setText(objekt);
+        EditText beschreibungEditText = findViewById(R.id.detailbeschreibungEditText);
+        beschreibungEditText.setText(beschreibung);
+        EditText anreiseEditText = findViewById(R.id.detailanreiseEditText);
+        anreiseEditText.setText(anreise);
+        EditText abreiseEditText = findViewById(R.id.detailabreiseEditText);
+        abreiseEditText.setText(abreise);
+
 
 
 
@@ -40,11 +48,13 @@ public class DetailScreen extends AppCompatActivity {
     }
 
     private void fillData() {
-        Cursor data = mDatabaseHelper.getData("Zweibrücken");
-        while (data.moveToNext())
-            land = data.getString(1);
-            stadt = data.getString(2);
-            objekt = data.getString(3);
-        }
+        Cursor data = mDatabaseHelper.getData(id);
+        land = data.getString(1);
+        stadt = data.getString(2);
+        objekt = data.getString(3);
+        beschreibung = data.getString(4);
+        anreise = data.getString(5);
+        abreise = data.getString(6);
+    }
 
 }
