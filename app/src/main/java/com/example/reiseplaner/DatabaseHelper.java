@@ -114,6 +114,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean updateData(String id, String land, String stadt, String objekt, String beschreibung, String anreise, String abreise, int bewertung, int abgeschlossen){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+
         contentValues.put(COL1, land);
         contentValues.put(COL2, stadt);
         contentValues.put(COL3, objekt);
@@ -122,6 +123,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL6, abreise);
         contentValues.put(COL7, bewertung);
         contentValues.put(COL8, abgeschlossen);
+
         db.update(TABLE_NAME, contentValues, "ID = ?", new String[] {id});
         return true;
     }
