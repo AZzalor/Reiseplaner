@@ -8,8 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,7 +19,9 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
 
     private ArrayList<String> land = new ArrayList<>();
     private ArrayList<String> stadt = new ArrayList<>();
+    private ArrayList<Integer> idArrayList = new ArrayList<>();
     DatabaseHelper mDatabaseHelper;
+    CustomAdapter customAdapter;
 
 
 
@@ -33,18 +35,45 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.abgeschlosseneReiseListe);
 
-        CustomAdapter customAdapter = new CustomAdapter();
+        customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(ReisezieleAbgeschlossen.this, DetailScreen.class);
+                int currentID = idArrayList.get(position);
+                intent.putExtra("ID", currentID);
+                startActivity(intent);
+            }
+        });
 
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateData();
+        customAdapter.notifyDataSetChanged();
+
+    }
+
+    public void updateData() {
+        land.clear();
+        stadt.clear();
+        idArrayList.clear();
+
+        fillData();
+    }
+
     private void fillData(){
-        Cursor data = mDatabaseHelper.getData();
+        Cursor data = mDatabaseHelper.getDataAbgeschlossen();
         while(data.moveToNext()){
             land.add(data.getString(1));
             stadt.add(data.getString(2));
+            idArrayList.add(data.getInt(0));
         }
     }
 

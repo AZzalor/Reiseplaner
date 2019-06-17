@@ -81,6 +81,8 @@ public class DetailScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 abgeschlossen = 1;
+                String ID = Integer.toString(id);
+                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, abgeschlossen);
 
                 Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
                 startActivity(intent);
