@@ -33,7 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTable = "create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY, " +
-                "LAND TEXT, " +
+                "LAND TEXT NOT NULL, " +
                 "STADT TEXT, " +
                 "OBJEKT TEXT, " +
                 "BESCHREIBUNG TEXT, " +
