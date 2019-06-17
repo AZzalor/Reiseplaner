@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity{
     private ArrayList<String> land = new ArrayList<>();
     private ArrayList<String> stadt = new ArrayList<>();
     private ArrayList<Integer> idArrayList = new ArrayList<>();
+    CustomAdapter customAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +36,13 @@ public class MainActivity extends AppCompatActivity{
 
         //mDatabaseHelper.addData("Deutschland", "Zweibrücken", "Schloss", "", "", "");
         //mDatabaseHelper.addData("Deutschland", "Saarbrücken", "", "", "", "");
+        //AddData("ASD", "", "", "", "", "");
 
         fillData();
 
         ListView listView = (ListView) findViewById(R.id.geplanteReiseListe);
 
-        CustomAdapter customAdapter = new CustomAdapter();
+        customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
 
 
@@ -56,6 +58,23 @@ public class MainActivity extends AppCompatActivity{
         });
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateData();
+        customAdapter.notifyDataSetChanged();
+
+
+    }
+
+    public void updateData() {
+        land.clear();
+        stadt.clear();
+        idArrayList.clear();
+
+        fillData();
     }
 
     private void fillData(){
@@ -101,6 +120,7 @@ public class MainActivity extends AppCompatActivity{
 
             return convertView;
         }
+
     }
 
     @Override

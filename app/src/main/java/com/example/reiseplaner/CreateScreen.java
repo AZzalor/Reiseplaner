@@ -1,8 +1,10 @@
 package com.example.reiseplaner;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,11 +24,15 @@ public class CreateScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_screen);
+        mDatabaseHelper = new DatabaseHelper(this);
 
+
+        //AddData("test", "test", "test", "test", "test", "test");
         Button button = (Button) findViewById(R.id.createOkButton);
 
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
+                Log.d("CreateScreen","onClick aufegrufen");
                 EditText landText = findViewById(R.id.createlandEditText);
                 land = landText.getText().toString();
                 EditText stadtText = findViewById(R.id.createstadtEditText);
@@ -39,13 +45,13 @@ public class CreateScreen extends AppCompatActivity {
                 anreise = anreiseText.getText().toString();
                 EditText abreiseText = findViewById(R.id.createabreiseEditText);
                 abreise = abreiseText.getText().toString();
-                createNewReiseziel(land, stadt, objekt, beschreibung, anreise, abreise);
+                AddData(land, stadt, objekt, beschreibung, anreise, abreise);
             }
         });
 
     }
 
-    private void createNewReiseziel (String Land, String Stadt, String Objekt, String Beschreibung, String Anreise, String Abreise){
+    public void AddData(String Land, String Stadt, String Objekt, String Beschreibung,String Anreise, String Abreise){
         mDatabaseHelper.addData(Land, Stadt,Objekt, Beschreibung, Anreise, Abreise);
     }
 
