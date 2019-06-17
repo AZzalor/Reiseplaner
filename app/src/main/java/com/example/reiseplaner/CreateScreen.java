@@ -35,6 +35,7 @@ public class CreateScreen extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Log.d("CreateScreen","onClick aufegrufen");
+
                 EditText landText = findViewById(R.id.createlandEditText);
                 land = landText.getText().toString();
                 EditText stadtText = findViewById(R.id.createstadtEditText);
@@ -47,6 +48,7 @@ public class CreateScreen extends AppCompatActivity {
                 anreise = anreiseText.getText().toString();
                 EditText abreiseText = findViewById(R.id.createabreiseEditText);
                 abreise = abreiseText.getText().toString();
+
                 AddData(land, stadt, objekt, beschreibung, anreise, abreise);
 
                 Intent intent = new Intent(CreateScreen.this, MainActivity.class);
