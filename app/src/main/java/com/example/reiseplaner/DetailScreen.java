@@ -36,6 +36,7 @@ public class DetailScreen extends AppCompatActivity {
         Button okbutton = (Button) findViewById(R.id.detailOkButton);
         Button abbrechenButton = (Button) findViewById(R.id.detailAbbrechenButton);
         Button abgeschlossenButton = (Button) findViewById(R.id.abgeschlossenButton);
+        Button deleteButton = (Button) findViewById(R.id.loeschenButton);
 
         okbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +81,12 @@ public class DetailScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 abgeschlossen = 1;
+            }
+        });
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDatabaseHelper.deleteReise(id);
             }
         });
 
