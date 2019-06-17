@@ -21,6 +21,7 @@ public class DetailScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_screen);
+        mDatabaseHelper = new DatabaseHelper(this);
 
         id = getIntent().getIntExtra("ID", 1);
 
@@ -40,12 +41,10 @@ public class DetailScreen extends AppCompatActivity {
 
     private void fillData() {
         Cursor data = mDatabaseHelper.getData("Zweibrücken");
-        land = data.getString(1);
-        stadt = data.getString(2);
-        objekt = data.getString(3);
-        anreise = data.getString(4);
-        abreise = data.getString(5);
-
-    }
+        while (data.moveToNext())
+            land = data.getString(1);
+            stadt = data.getString(2);
+            objekt = data.getString(3);
+        }
 
 }
