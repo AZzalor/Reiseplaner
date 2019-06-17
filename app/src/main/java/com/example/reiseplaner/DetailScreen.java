@@ -1,5 +1,6 @@
 package com.example.reiseplaner;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,8 +34,10 @@ public class DetailScreen extends AppCompatActivity {
 
         data = fillData();
 
-        Button button = findViewById(R.id.detailOkButton);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button okbutton = (Button) findViewById(R.id.detailOkButton);
+        Button abbrechenButton = (Button) findViewById(R.id.detailAbbrechenButton);
+
+        okbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText landEditText = findViewById(R.id.detaillandEditText);
@@ -53,7 +56,18 @@ public class DetailScreen extends AppCompatActivity {
                 String ID = Integer.toString(id);
 
                 mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, abgeschlossen);
+
+                Intent intent = new Intent(DetailScreen.this, MainActivity.class);
+                startActivity(intent);
             }
+        });
+
+        abbrechenButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(DetailScreen.this, MainActivity.class);
+               startActivity(intent);
+           }
         });
 
 

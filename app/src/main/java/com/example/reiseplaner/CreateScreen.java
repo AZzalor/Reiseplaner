@@ -32,6 +32,7 @@ public class CreateScreen extends AppCompatActivity {
         Button abbrechenButton = (Button) findViewById(R.id.createAbbrechenButton);
 
         okbutton.setOnClickListener(new View.OnClickListener(){
+            @Override
             public void onClick(View v){
                 Log.d("CreateScreen","onClick aufegrufen");
                 EditText landText = findViewById(R.id.createlandEditText);
@@ -54,7 +55,8 @@ public class CreateScreen extends AppCompatActivity {
         });
 
         abbrechenButton.setOnClickListener(new View.OnClickListener(){
-           public void onClick(View v){
+            @Override
+            public void onClick(View v){
                Intent intent = new Intent(CreateScreen.this, MainActivity.class);
                startActivity(intent);
            }
