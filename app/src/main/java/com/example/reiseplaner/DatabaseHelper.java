@@ -132,7 +132,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * @param id
      * @param reise
      */
-    public void deleteReise(int id, String reise) {
+    public void deleteData(int id, String reise) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "DELETE FROM " + TABLE_NAME + " WHERE "
                 + COL1 + " = '" + id + "'" +
@@ -151,6 +151,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME;
         Cursor data = db.rawQuery(query, null);
+        data.moveToFirst();
         return data;
     }
 
@@ -158,6 +159,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "select * from " + TABLE_NAME + " where STADT = '" + stadt + "'";
         Cursor data = db.rawQuery(query, null);
+        data.moveToFirst();
         return data;
     }
 
