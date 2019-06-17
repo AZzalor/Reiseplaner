@@ -75,7 +75,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:textAlignment="center"
-            android:inputType="text"/>
+            android:inputType="number"/>
 
         <EditText
             android:id="@+id/detailabreiseEditText"
@@ -87,7 +87,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:textAlignment="center"
-            android:inputType="text"/>
+            android:inputType="number"/>
 
     </LinearLayout>
 
