@@ -82,21 +82,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    /**
-     * Update des Reiseziels
-     * @param newReise
-     * @param id
-     * @param oldReise
-     */
-    public void updateReise(String newReise, int id, String oldReise){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "UPDATE " + TABLE_NAME + " SET " + COL2 +
-                " = '" + newReise + "' WHERE " + COL0 + " = '" + id + "'" +
-                " AND " + COL1 + " = '" + oldReise + "'";
-        Log.d(TAG, "updateName: query: " + query);
-        Log.d(TAG, "updateName: Setting name to " + newReise);
-        db.execSQL(query);
-    }
 
     /**
      * Update der Datenbank über die ID
@@ -125,6 +110,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL8, abgeschlossen);
 
         db.update(TABLE_NAME, contentValues, "ID = ?", new String[] {id});
+
+        Log.d(TAG, "Updated Data with ID = " + id);
+
         return true;
     }
 
@@ -140,6 +128,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] whereArgs = new String[]{Integer.toString(id)};
 
         db.delete(TABLE_NAME, where, whereArgs);
+
+        Log.d(TAG, "Deleted Data with ID = " + id);
 
     }
 
