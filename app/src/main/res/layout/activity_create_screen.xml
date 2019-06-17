@@ -1,122 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CreateScreen">
 
-    <LinearLayout
-        android:id="@+id/createlandLinearLayout"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        
-        <EditText
-            android:id="@+id/createlandEditText"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/createlandLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/land"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:paddingLeft="10dp"
-            android:inputType="text"/>
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/createstadtEditText"
+            <EditText
+                android:id="@+id/createlandEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="15dp"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:text="@string/land" />
+
+            <EditText
+                android:id="@+id/createstadtEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:text="@string/stadt" />
+
+            <EditText
+                android:id="@+id/createobjektEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:text="@string/objekt" />
+
+            <EditText
+                android:id="@+id/createbeschreibungEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:text="@string/beschreibung" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/createzeitraumLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/stadt"
+            android:layout_below="@id/createlandLinearLayout"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:paddingLeft="10dp"
-            android:inputType="text"/>
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/createobjektEditText"
+            <EditText
+                android:id="@+id/createanreiseEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="0.50"
+                android:inputType="text"
+                android:text="@string/anreise"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/createabreiseEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="0.50"
+                android:inputType="text"
+                android:text="@string/anreise"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/createButtonLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/objekt"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:paddingLeft="10dp"
-            android:inputType="text"/>
+            android:layout_below="@id/createzeitraumLayout"
+            android:layout_marginTop="100dp"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/createbeschreibungEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/beschreibung"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:paddingLeft="10dp"
-            android:inputType="text"/>
+            <Button
+                android:id="@+id/createOkButton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="0.50"
+                android:text="@string/okButton" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/createAbbrechenButton"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp"
+                android:layout_weight="0.50"
+                android:text="@string/abbrechenButton" />
 
-    <LinearLayout
-        android:id="@+id/createzeitraumLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/createlandLinearLayout"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal">
+        </LinearLayout>
 
-        <EditText
-            android:id="@+id/createanreiseEditText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.50"
-            android:text="@string/anreise"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:textAlignment="center"
-            android:inputType="text"/>
+    </RelativeLayout>
 
-        <EditText
-            android:id="@+id/createabreiseEditText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.50"
-            android:text="@string/anreise"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:textAlignment="center"
-            android:inputType="text"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/createButtonLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/createzeitraumLayout"
-        android:layout_marginTop="100dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/createOkButton"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.50"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="30dp"
-            android:text="@string/okButton"/>
-
-        <Button
-            android:id="@+id/createAbbrechenButton"
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.50"
-            android:layout_marginRight="15dp"
-            android:text="@string/abbrechenButton"/>
-
-    </LinearLayout>
-
-</RelativeLayout>
+</ScrollView>
