@@ -81,12 +81,18 @@ public class DetailScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 abgeschlossen = 1;
+
+                Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
+                startActivity(intent);
             }
         });
+
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDatabaseHelper.deleteReise(id);
+                Intent intent = new Intent(DetailScreen.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
