@@ -63,6 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean addData(String land, String stadt, String objekt, String beschreibung, String anreise, String abreise) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+
         contentValues.put(COL1, land);
         contentValues.put(COL2, stadt);
         contentValues.put(COL3, objekt);
