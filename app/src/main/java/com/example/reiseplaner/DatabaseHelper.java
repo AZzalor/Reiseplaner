@@ -32,7 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTable = "create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+        String createTable = "create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY, " +
                 "LAND TEXT, " +
                 "STADT TEXT, " +
                 "OBJEKT TEXT, " +
@@ -72,10 +72,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean updateData(String mId, String mLand, String mStadt, String mObjekt, String mBeschreibung, String mAnreise, String mAbreise, int mBewertung, int mAbgeschlossen){
+    /**
+     * Update des Reiseziels
+     * @param newReise
+     * @param id
+     * @param oldReise
+     */
+    public void updateReise(String newReise, int id, String oldReise){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "UPDATE " + TABLE_NAME + " SET " + COL2 +
+                " = '" + newReise + "' WHERE " + COL0 + " = '" + id + "'" +
+                " AND " + COL1 + " = '" + oldReise + "'";
+        Log.d(TAG, "updateName: query: " + query);
+        Log.d(TAG, "updateName: Setting name to " + newReise);
+        db.execSQL(query);
+    }
+
+    /**
+     * Update der Datenbank über die ID
+     * @param id
+     * @param mLand
+     * @param mStadt
+     * @param mObjekt
+     * @param mBeschreibung
+     * @param mAnreise
+     * @param mAbreise
+     * @param mBewertung
+     * @param mAbgeschlossen
+     * @return
+     */
+    public boolean updateData(String id, String mLand, String mStadt, String mObjekt, String mBeschreibung, String mAnreise, String mAbreise, int mBewertung, int mAbgeschlossen){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL0, mId);
         contentValues.put(COL1, mLand);
         contentValues.put(COL2, mStadt);
         contentValues.put(COL3, mObjekt);
@@ -84,13 +112,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL6, mAbreise);
         contentValues.put(COL7, mBewertung);
         contentValues.put(COL8, mAbgeschlossen);
-        db.update(TABLE_NAME, contentValues, "ID = ?", new String[] {mId});
+        db.update(TABLE_NAME, contentValues, "ID = ?", new String[] {id});
         return true;
     }
 
-    public Integer deleteData(String id) {
+
+    /**
+     * löscht einen Eintrag aus der Datenbank
+     * @param id
+     * @param reise
+     */
+    public void deleteReise(int id, String reise) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABLE_NAME, "ID = ?", new String[] {id});
+        String query = "DELETE FROM " + TABLE_NAME + " WHERE "
+                + COL1 + " = '" + id + "'" +
+                " AND " + COL2 + " = '" + reise + "'";
+        Log.d(TAG, "deleteName: query: " + query);
+        Log.d(TAG, "deleteName: Deleting " + reise + " from database.");
+        db.execSQL(query);
+
     }
 
     /**
