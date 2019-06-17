@@ -27,12 +27,11 @@ public class CreateScreen extends AppCompatActivity {
         mDatabaseHelper = new DatabaseHelper(this);
 
 
-        //AddData("test", "test", "test", "test", "test", "test");
         Button button = (Button) findViewById(R.id.createOkButton);
 
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Log.d("CreateScreen","onClick aufegrufen");
+
                 EditText landText = findViewById(R.id.createlandEditText);
                 land = landText.getText().toString();
                 EditText stadtText = findViewById(R.id.createstadtEditText);
