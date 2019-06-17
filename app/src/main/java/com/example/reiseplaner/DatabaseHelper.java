@@ -50,17 +50,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addData(String mLand, String mStadt, String mObjekt, String mBeschreibung, String mAnreise, String mAbreise) {
+    /**
+     * Daten zur Datenbank hinzufügen
+     * @param land
+     * @param stadt
+     * @param objekt
+     * @param beschreibung
+     * @param anreise
+     * @param abreise
+     * @return
+     */
+    public boolean addData(String land, String stadt, String objekt, String beschreibung, String anreise, String abreise) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL1, mLand);
-        contentValues.put(COL2, mStadt);
-        contentValues.put(COL3, mObjekt);
-        contentValues.put(COL4, mBeschreibung);
-        contentValues.put(COL5, mAnreise);
-        contentValues.put(COL6, mAbreise);
+        contentValues.put(COL1, land);
+        contentValues.put(COL2, stadt);
+        contentValues.put(COL3, objekt);
+        contentValues.put(COL4, beschreibung);
+        contentValues.put(COL5, anreise);
+        contentValues.put(COL6, abreise);
 
-        Log.d(TAG, "addData: Adding " + mLand + " + " + mStadt + " + " + mObjekt + " + " + mBeschreibung + " + " + mAnreise + " + " + mAbreise + " to " + TABLE_NAME);
+        Log.d(TAG, "addData: Adding " + land + " + " + stadt + " + " + objekt + " + " + beschreibung + " + " + anreise + " + " + abreise + " to " + TABLE_NAME);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
 
@@ -91,27 +101,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /**
      * Update der Datenbank über die ID
      * @param id
-     * @param mLand
-     * @param mStadt
-     * @param mObjekt
-     * @param mBeschreibung
-     * @param mAnreise
-     * @param mAbreise
-     * @param mBewertung
-     * @param mAbgeschlossen
+     * @param land
+     * @param stadt
+     * @param objekt
+     * @param beschreibung
+     * @param anreise
+     * @param abreise
+     * @param bewertung
+     * @param abgeschlossen
      * @return
      */
-    public boolean updateData(String id, String mLand, String mStadt, String mObjekt, String mBeschreibung, String mAnreise, String mAbreise, int mBewertung, int mAbgeschlossen){
+    public boolean updateData(String id, String land, String stadt, String objekt, String beschreibung, String anreise, String abreise, int bewertung, int abgeschlossen){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL1, mLand);
-        contentValues.put(COL2, mStadt);
-        contentValues.put(COL3, mObjekt);
-        contentValues.put(COL4, mBeschreibung);
-        contentValues.put(COL5, mAnreise);
-        contentValues.put(COL6, mAbreise);
-        contentValues.put(COL7, mBewertung);
-        contentValues.put(COL8, mAbgeschlossen);
+        contentValues.put(COL1, land);
+        contentValues.put(COL2, stadt);
+        contentValues.put(COL3, objekt);
+        contentValues.put(COL4, beschreibung);
+        contentValues.put(COL5, anreise);
+        contentValues.put(COL6, abreise);
+        contentValues.put(COL7, bewertung);
+        contentValues.put(COL8, abgeschlossen);
         db.update(TABLE_NAME, contentValues, "ID = ?", new String[] {id});
         return true;
     }
