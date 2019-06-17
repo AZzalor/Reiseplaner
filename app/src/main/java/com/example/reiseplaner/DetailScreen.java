@@ -20,8 +20,6 @@ public class DetailScreen extends AppCompatActivity {
     private int bewertung;
     private int abgeschlossen;
 
-    private Cursor data;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +29,10 @@ public class DetailScreen extends AppCompatActivity {
 
         id = getIntent().getIntExtra("ID", 0);
 
-        data = fillData();
+        fillData();
 
-        Button button = findViewById(R.id.detailOkButton);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button okButton = findViewById(R.id.detailOkButton);
+        okButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText landEditText = findViewById(R.id.detaillandEditText);
@@ -56,6 +54,14 @@ public class DetailScreen extends AppCompatActivity {
             }
         });
 
+        Button abgeschlossenButton = findViewById(R.id.abgeschlossenButton);
+        abgeschlossenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abgeschlossen = 1;
+            }
+        });
+
 
 
         EditText landEditText = findViewById(R.id.detaillandEditText);
@@ -70,6 +76,8 @@ public class DetailScreen extends AppCompatActivity {
         anreiseEditText.setText(anreise);
         EditText abreiseEditText = findViewById(R.id.detailabreiseEditText);
         abreiseEditText.setText(abreise);
+        EditText bewertungEditText = findViewById(R.id.);
+
 
 
 
@@ -77,7 +85,7 @@ public class DetailScreen extends AppCompatActivity {
 
     }
 
-    private Cursor fillData() {
+    private void fillData() {
         Cursor data = mDatabaseHelper.getData(id);
         land = data.getString(1);
         stadt = data.getString(2);
@@ -85,7 +93,8 @@ public class DetailScreen extends AppCompatActivity {
         beschreibung = data.getString(4);
         anreise = data.getString(5);
         abreise = data.getString(6);
-        return  data;
+        bewertung = data.getInt(7);
+        abgeschlossen = data.getInt(8);
     }
 
 }
