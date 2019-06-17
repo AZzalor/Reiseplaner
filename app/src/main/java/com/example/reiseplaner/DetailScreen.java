@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,6 +41,8 @@ public class DetailScreen extends AppCompatActivity {
         okbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("DetailScreen","OK onClick aufegrufen");
+
                 EditText landEditText = findViewById(R.id.detaillandEditText);
                 land = landEditText.getText().toString();
                 EditText stadtEditText = findViewById(R.id.detailstadtEditText);
@@ -65,6 +68,7 @@ public class DetailScreen extends AppCompatActivity {
         abbrechenButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               Log.d("DetailScreen","ABBRECHEN onClick aufegrufen");
                Intent intent = new Intent(DetailScreen.this, MainActivity.class);
                startActivity(intent);
            }

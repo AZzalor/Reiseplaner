@@ -59,6 +59,7 @@ public class CreateScreen extends AppCompatActivity {
         abbrechenButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                Log.d("CreateScreen","ABBRECHEN onClick aufegrufen");
                Intent intent = new Intent(CreateScreen.this, MainActivity.class);
                startActivity(intent);
            }
