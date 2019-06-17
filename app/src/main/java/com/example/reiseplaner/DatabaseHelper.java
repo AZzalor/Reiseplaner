@@ -130,16 +130,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /**
      * löscht einen Eintrag aus der Datenbank
      * @param id
-     * @param reise
      */
-    public void deleteData(int id, String reise) {
+    public void deleteReise(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "DELETE FROM " + TABLE_NAME + " WHERE "
-                + COL1 + " = '" + id + "'" +
-                " AND " + COL2 + " = '" + reise + "'";
-        Log.d(TAG, "deleteName: query: " + query);
-        Log.d(TAG, "deleteName: Deleting " + reise + " from database.");
-        db.execSQL(query);
+
+        String where = COL0 + "=?";
+        String[] whereArgs = new String[]{Integer.toString(id)};
+
+        db.delete(TABLE_NAME, where, whereArgs);
 
     }
 
