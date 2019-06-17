@@ -27,11 +27,13 @@ public class CreateScreen extends AppCompatActivity {
         mDatabaseHelper = new DatabaseHelper(this);
 
 
-        Button button = (Button) findViewById(R.id.createOkButton);
+        //AddData("test", "test", "test", "test", "test", "test");
+        Button okbutton = (Button) findViewById(R.id.createOkButton);
+        Button abbrechenButton = (Button) findViewById(R.id.createAbbrechenButton);
 
-        button.setOnClickListener(new View.OnClickListener(){
+        okbutton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-
+                Log.d("CreateScreen","onClick aufegrufen");
                 EditText landText = findViewById(R.id.createlandEditText);
                 land = landText.getText().toString();
                 EditText stadtText = findViewById(R.id.createstadtEditText);
@@ -45,7 +47,17 @@ public class CreateScreen extends AppCompatActivity {
                 EditText abreiseText = findViewById(R.id.createabreiseEditText);
                 abreise = abreiseText.getText().toString();
                 AddData(land, stadt, objekt, beschreibung, anreise, abreise);
+
+                Intent intent = new Intent(CreateScreen.this, MainActivity.class);
+                startActivity(intent);
             }
+        });
+
+        abbrechenButton.setOnClickListener(new View.OnClickListener(){
+           public void onClick(View v){
+               Intent intent = new Intent(CreateScreen.this, MainActivity.class);
+               startActivity(intent);
+           }
         });
 
     }
