@@ -162,5 +162,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
+    public Cursor getDataOffen() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "select * from " + TABLE_NAME + " where ABGESCHLOSSEN = 0";
+        Cursor data = db.rawQuery(query, null);
+        data.moveToFirst();
+        return data;
+    }
+
 
 }
