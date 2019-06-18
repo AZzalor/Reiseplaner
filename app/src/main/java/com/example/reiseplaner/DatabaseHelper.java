@@ -40,7 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "ANREISE TEXT," +
                 "ABREISE TEXT," +
                 "BEWERTUNG INTEGER," +
-                "ABGESCHLOSSEN INTEGER)";
+                "ABGESCHLOSSEN INTEGER DEFAULT 0)";
         db.execSQL(createTable);
     }
 
