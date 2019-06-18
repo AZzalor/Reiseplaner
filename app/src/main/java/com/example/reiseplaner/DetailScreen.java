@@ -94,7 +94,13 @@ public class DetailScreen extends AppCompatActivity {
             public void onClick(View v) {
                 mDatabaseHelper.deleteReise(id);
                 Intent intent = new Intent(DetailScreen.this, MainActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
+
+                if (abgeschlossen == 1) {
+                    startActivity(intent2);
+                } else {
+                    startActivity(intent);
+                }
             }
         });
 
