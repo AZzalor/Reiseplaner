@@ -38,6 +38,10 @@ public class DetailScreen extends AppCompatActivity {
         Button abgeschlossenButton = (Button) findViewById(R.id.abgeschlossenButton);
         Button deleteButton = (Button) findViewById(R.id.loeschenButton);
 
+        if (abgeschlossen == 1){
+            abgeschlossenButton.setVisibility(View.GONE);
+        }
+
         okbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

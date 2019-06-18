@@ -10,24 +10,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
 
     DatabaseHelper mDatabaseHelper;
-    private ArrayList<String> land = new ArrayList<>();
-    private ArrayList<String> stadt = new ArrayList<>();
+    private ArrayList<String> landArrayList = new ArrayList<>();
+    private ArrayList<String> stadtArrayList = new ArrayList<>();
     private ArrayList<Integer> idArrayList = new ArrayList<>();
-    private ArrayList<Integer> abgeschlossenArrayList = new ArrayList<>();
     CustomAdapter customAdapter;
 
     @Override
@@ -36,11 +30,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         mDatabaseHelper = new DatabaseHelper(this);
 
-
-        fillData();
-        for (int i = 0; i < abgeschlossenArrayList.size(); i++){
-            Log.d("Main", abgeschlossenArrayList.get(i).toString());
-        }
+        //fillData();
 
         ListView listView = (ListView) findViewById(R.id.geplanteReiseListe);
 
@@ -65,27 +55,32 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onResume() {
         super.onResume();
+
         updateData();
+
         customAdapter.notifyDataSetChanged();
-
-
     }
 
     public void updateData() {
-        land.clear();
-        stadt.clear();
+
+        landArrayList.clear();
+        stadtArrayList.clear();
         idArrayList.clear();
 
-        fillData();
+       fillData();
     }
 
     private void fillData(){
+        Log.d("Main", "fillData() aufgerufen");
         Cursor data = mDatabaseHelper.getDataOffen();
         while(data.moveToNext()){
-            land.add(data.getString(1));
-            stadt.add(data.getString(2));
+            landArrayList.add(data.getString(1));
+            stadtArrayList.add(data.getString(2));
             idArrayList.add(data.getInt(0));
-            abgeschlossenArrayList.add(data.getInt(8));
+        }
+        for (int i = 0; i < landArrayList.size(); i++){
+            Log.d("Main", "landArrayfillData" + landArrayList.get(i));
+            Log.d("Main", "stadtArrayfillData" + stadtArrayList.get(i));
         }
     }
 
@@ -93,7 +88,7 @@ public class MainActivity extends AppCompatActivity{
     class CustomAdapter extends BaseAdapter {
         @Override
         public int getCount() {
-            return land.size();
+            return landArrayList.size();
         }
 
         @Override
@@ -109,13 +104,12 @@ public class MainActivity extends AppCompatActivity{
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             convertView = getLayoutInflater().inflate(R.layout.customlayout, null);
+
             TextView textView_stadt = (TextView)convertView.findViewById(R.id.textView_stadt);
             TextView textView_land = (TextView)convertView.findViewById(R.id.textView_land);
 
-
-
-            textView_land.setText(land.get(position));
-            textView_stadt.setText(stadt.get(position));
+            textView_land.setText(landArrayList.get(position));
+            textView_stadt.setText(stadtArrayList.get(position));
 
             return convertView;
         }

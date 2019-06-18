@@ -27,7 +27,6 @@ public class CreateScreen extends AppCompatActivity {
         mDatabaseHelper = new DatabaseHelper(this);
 
 
-        //AddData("test", "test", "test", "test", "test", "test");
         Button okbutton = (Button) findViewById(R.id.createOkButton);
         Button abbrechenButton = (Button) findViewById(R.id.createAbbrechenButton);
 
