@@ -80,9 +80,9 @@ public class DetailScreen extends AppCompatActivity {
         abgeschlossenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                abgeschlossen = 1;
+
                 String ID = Integer.toString(id);
-                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, abgeschlossen);
+                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, 1);
 
                 Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
                 startActivity(intent);
