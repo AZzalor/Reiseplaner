@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity{
     private ArrayList<String> land = new ArrayList<>();
     private ArrayList<String> stadt = new ArrayList<>();
     private ArrayList<Integer> idArrayList = new ArrayList<>();
+    private ArrayList<Integer> abgeschlossenArrayList = new ArrayList<>();
     CustomAdapter customAdapter;
 
     @Override
@@ -34,11 +36,11 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         mDatabaseHelper = new DatabaseHelper(this);
 
-        //mDatabaseHelper.addData("Deutschland", "Zweibrücken", "Schloss", "", "", "");
-        //mDatabaseHelper.addData("Deutschland", "Saarbrücken", "", "", "", "");
-        //AddData("ASD", "", "", "", "", "");
 
         fillData();
+        for (int i = 0; i < abgeschlossenArrayList.size(); i++){
+            Log.d("Main", abgeschlossenArrayList.get(i).toString());
+        }
 
         ListView listView = (ListView) findViewById(R.id.geplanteReiseListe);
 
@@ -78,16 +80,13 @@ public class MainActivity extends AppCompatActivity{
     }
 
     private void fillData(){
-        Cursor data = mDatabaseHelper.getData();
+        Cursor data = mDatabaseHelper.getDataOffen();
         while(data.moveToNext()){
             land.add(data.getString(1));
             stadt.add(data.getString(2));
             idArrayList.add(data.getInt(0));
+            abgeschlossenArrayList.add(data.getInt(8));
         }
-    }
-
-    public void AddData(String Land, String Stadt, String Objekt, String Beschreibung,String Anreise, String Abreise){
-        mDatabaseHelper.addData(Land, Stadt,Objekt, Beschreibung, Anreise, Abreise);
     }
 
 
