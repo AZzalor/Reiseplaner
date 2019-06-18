@@ -32,11 +32,6 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
         setContentView(R.layout.activity_reiseziele_abgeschlossen);
         mDatabaseHelper = new DatabaseHelper(this);
 
-        updateData();
-        for (int i = 0; i < land.size(); i++){
-            Log.d("Main", "land" + land.get(i));
-            Log.d("Main", "stadt" + stadt.get(i));
-        }
 
         ListView listView = (ListView) findViewById(R.id.abgeschlosseneReiseListe);
 

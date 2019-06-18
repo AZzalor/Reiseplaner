@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         mDatabaseHelper = new DatabaseHelper(this);
 
-        //fillData();
-
         ListView listView = (ListView) findViewById(R.id.geplanteReiseListe);
 
         customAdapter = new CustomAdapter();
@@ -71,16 +69,11 @@ public class MainActivity extends AppCompatActivity{
     }
 
     private void fillData(){
-        Log.d("Main", "fillData() aufgerufen");
         Cursor data = mDatabaseHelper.getDataOffen();
         while(data.moveToNext()){
             landArrayList.add(data.getString(1));
             stadtArrayList.add(data.getString(2));
             idArrayList.add(data.getInt(0));
-        }
-        for (int i = 0; i < landArrayList.size(); i++){
-            Log.d("Main", "landArrayfillData" + landArrayList.get(i));
-            Log.d("Main", "stadtArrayfillData" + stadtArrayList.get(i));
         }
     }
 
