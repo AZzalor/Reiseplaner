@@ -70,6 +70,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL4, beschreibung);
         contentValues.put(COL5, anreise);
         contentValues.put(COL6, abreise);
+        contentValues.put(COL8, 0);
 
         Log.d(TAG, "addData: Adding " + land + " + " + stadt + " + " + objekt + " + " + beschreibung + " + " + anreise + " + " + abreise + " to " + TABLE_NAME);
 
