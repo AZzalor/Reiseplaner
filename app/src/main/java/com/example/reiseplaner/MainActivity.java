@@ -18,11 +18,12 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
 
-    DatabaseHelper mDatabaseHelper;
     private ArrayList<String> landArrayList = new ArrayList<>();
     private ArrayList<String> stadtArrayList = new ArrayList<>();
     private ArrayList<Integer> idArrayList = new ArrayList<>();
     CustomAdapter customAdapter;
+    DatabaseHelper mDatabaseHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity{
             stadtArrayList.add(data.getString(2));
             idArrayList.add(data.getInt(0));
         }
+
     }
 
 
