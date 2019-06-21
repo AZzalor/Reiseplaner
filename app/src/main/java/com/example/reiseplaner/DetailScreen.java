@@ -98,7 +98,7 @@ public class DetailScreen extends AppCompatActivity {
                 String ID = Integer.toString(id);
                 mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, 1);
 
-                showPopup();
+                // showPopup();
 
                 Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
                 startActivity(intent);
@@ -178,7 +178,7 @@ public class DetailScreen extends AppCompatActivity {
                 myDialog.dismiss();
             }
         });
-        
+
 
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
