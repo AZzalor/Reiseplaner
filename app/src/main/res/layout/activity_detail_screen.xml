@@ -24,7 +24,9 @@
                 android:layout_marginRight="15dp"
                 android:inputType="text"
                 android:paddingLeft="10dp"
-                android:text="@string/land" />
+                android:text="@string/land"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimaryDark"/>
 
             <EditText
                 android:id="@+id/detailstadtEditText"
@@ -35,7 +37,9 @@
                 android:layout_marginRight="15dp"
                 android:inputType="text"
                 android:paddingLeft="10dp"
-                android:text="@string/stadt" />
+                android:text="@string/stadt"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimaryDark"/>
 
             <EditText
                 android:id="@+id/detailobjektEditText"
@@ -46,7 +50,9 @@
                 android:layout_marginRight="15dp"
                 android:inputType="text"
                 android:paddingLeft="10dp"
-                android:text="@string/objekt" />
+                android:text="@string/objekt"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimaryDark"/>
 
             <EditText
                 android:id="@+id/detailbeschreibungEditText"
@@ -57,7 +63,9 @@
                 android:layout_marginRight="15dp"
                 android:inputType="text"
                 android:paddingLeft="10dp"
-                android:text="@string/beschreibung" />
+                android:text="@string/beschreibung"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimaryDark"/>
 
         </LinearLayout>
 
@@ -79,7 +87,9 @@
                 android:layout_weight="0.50"
                 android:inputType="number"
                 android:text="@string/anreise"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimaryDark"/>
 
             <EditText
                 android:id="@+id/detailabreiseEditText"
@@ -91,7 +101,9 @@
                 android:layout_weight="0.50"
                 android:inputType="number"
                 android:text="@string/anreise"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimaryDark"/>
 
         </LinearLayout>
 
@@ -112,7 +124,8 @@
                 android:layout_marginBottom="10dp"
                 android:gravity="bottom|left"
                 android:text="@string/bewertung"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textColor="@color/colorPrimaryDark"/>
 
             <EditText
                 android:id="@+id/edittextbewertung"
@@ -120,7 +133,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_marginRight="15dp"
-                android:inputType="number" />
+                android:inputType="number"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimaryDark"/>
 
         </LinearLayout>
 
@@ -139,7 +154,10 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="0.50"
-                android:text="@string/okButton" />
+                android:text="@string/okButton"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/standardSchrift"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/detailAbbrechenButton"
@@ -147,7 +165,10 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="15dp"
                 android:layout_weight="0.50"
-                android:text="@string/abbrechenButton" />
+                android:text="@string/abbrechenButton"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/standardSchrift"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 
@@ -165,7 +186,10 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginRight="15dp"
-                android:text="@string/abgeschlossenButton" />
+                android:text="@string/abgeschlossenButton"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/standardSchrift"
+                android:textStyle="bold"/>
 
             <Button
                 android:id="@+id/loeschenButton"
@@ -174,7 +198,10 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginRight="15dp"
-                android:text="@string/loeschenButton" />
+                android:text="@string/loeschenButton"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/standardSchrift"
+                android:textStyle="bold"/>
 
 
         </LinearLayout>

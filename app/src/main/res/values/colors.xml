@@ -5,6 +5,6 @@
     <color name="colorPrimaryDark">#191970</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="actionbarSchrift">#ffffff</color>
+    <color name="standardSchrift">#ffffff</color>
     
 </resources>
