@@ -162,6 +162,7 @@ public class DetailScreen extends AppCompatActivity {
         ImageView star3;
         ImageView star4;
         ImageView star5;
+        int bewertung;
 
         myDialog.setContentView(R.layout.bewertung_popup);
         txtclose = (TextView) myDialog.findViewById(R.id.txtviewclose);
@@ -177,7 +178,7 @@ public class DetailScreen extends AppCompatActivity {
                 myDialog.dismiss();
             }
         });
-
+        
 
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
