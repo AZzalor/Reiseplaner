@@ -25,7 +25,7 @@
                 android:layout_marginRight="15dp"
                 android:inputType="text"
                 android:paddingLeft="10dp"
-                android:text="@string/land"
+                android:hint="@string/land"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -38,7 +38,7 @@
                 android:layout_marginRight="15dp"
                 android:inputType="text"
                 android:paddingLeft="10dp"
-                android:text="@string/stadt"
+                android:hint="@string/stadt"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -51,7 +51,7 @@
                 android:layout_marginRight="15dp"
                 android:inputType="text"
                 android:paddingLeft="10dp"
-                android:text="@string/objekt"
+                android:hint="@string/objekt"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -64,7 +64,7 @@
                 android:layout_marginRight="15dp"
                 android:inputType="text"
                 android:paddingLeft="10dp"
-                android:text="@string/beschreibung"
+                android:hint="@string/beschreibung"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -87,10 +87,10 @@
                 android:layout_marginRight="15dp"
                 android:layout_weight="0.50"
                 android:inputType="number"
-                android:text="@string/anreise"
+                android:hint="@string/anreise"
                 android:textAlignment="center"
                 android:backgroundTint="@color/colorPrimaryDark"
-                android:textColor="@color/colorPrimaryDark"/>
+                />
 
             <EditText
                 android:id="@+id/createabreiseEditText"
@@ -101,10 +101,10 @@
                 android:layout_marginRight="15dp"
                 android:layout_weight="0.50"
                 android:inputType="number"
-                android:text="@string/anreise"
+                android:hint="@string/anreise"
                 android:textAlignment="center"
                 android:backgroundTint="@color/colorPrimaryDark"
-                android:textColor="@color/colorPrimaryDark"/>
+                />
 
         </LinearLayout>
 
