@@ -1,13 +1,19 @@
 package com.example.reiseplaner;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class DetailScreen extends AppCompatActivity {
 
@@ -21,6 +27,7 @@ public class DetailScreen extends AppCompatActivity {
     private String abreise;
     private int bewertung;
     private int abgeschlossen;
+    private Dialog myDialog;
 
 
     @Override
@@ -41,6 +48,7 @@ public class DetailScreen extends AppCompatActivity {
         if (abgeschlossen == 1){
             abgeschlossenButton.setVisibility(View.GONE);
         }
+
 
         okbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,12 +89,16 @@ public class DetailScreen extends AppCompatActivity {
            }
         });
 
+        myDialog = new Dialog(this);
+
         abgeschlossenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 String ID = Integer.toString(id);
                 mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, 1);
+
+                showPopup();
 
                 Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
                 startActivity(intent);
@@ -141,6 +153,34 @@ public class DetailScreen extends AppCompatActivity {
         abreise = data.getString(6);
         bewertung = data.getInt(7);
         abgeschlossen = data.getInt(8);
+    }
+
+    public void showPopup() {
+        TextView txtclose;
+        ImageView star1;
+        ImageView star2;
+        ImageView star3;
+        ImageView star4;
+        ImageView star5;
+
+        myDialog.setContentView(R.layout.bewertung_popup);
+        txtclose = (TextView) myDialog.findViewById(R.id.txtviewclose);
+        star1 = (ImageView) myDialog.findViewById(R.id.star1);
+        star2 = (ImageView) myDialog.findViewById(R.id.star2);
+        star3 = (ImageView) myDialog.findViewById(R.id.star3);
+        star4 = (ImageView) myDialog.findViewById(R.id.star4);
+        star5 = (ImageView) myDialog.findViewById(R.id.star5);
+
+        txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+            }
+        });
+
+
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
     }
 
 }

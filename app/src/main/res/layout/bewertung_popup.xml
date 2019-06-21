@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="350dp"
+    android:layout_height="250dp"
+    android:background="@color/colorPrimary"
+    android:padding="5dp"
+    android:layout_gravity="center" >
+
+    <TextView
+        android:id="@+id/txtviewclose"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:textColor="@color/standardSchrift"
+        android:text="@string/close"
+        android:textStyle="bold"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:background="@drawable/cerclebackground"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bewertung"
+            android:textStyle="bold"
+            android:textColor="@color/standardSchrift"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@string/bewertunglang"
+            android:textColor="@color/standardSchrift"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:id="@+id/star1"
+            android:src="@drawable/star"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="55dp" />
+        <ImageView
+            android:id="@+id/star2"
+            android:src="@drawable/star"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="55dp" />
+        <ImageView
+            android:id="@+id/star3"
+            android:src="@drawable/star"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="55dp" />
+        <ImageView
+            android:id="@+id/star4"
+            android:src="@drawable/star"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="55dp" />
+        <ImageView
+            android:id="@+id/star5"
+            android:src="@drawable/star"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="55dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
