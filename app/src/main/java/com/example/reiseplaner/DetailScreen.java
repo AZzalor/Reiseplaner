@@ -121,9 +121,7 @@ public class DetailScreen extends AppCompatActivity {
         });
 
 
-
-
-
+        
         EditText landEditText = findViewById(R.id.detaillandEditText);
         landEditText.setText(land);
         EditText stadtEditText = findViewById(R.id.detailstadtEditText);
@@ -139,8 +137,6 @@ public class DetailScreen extends AppCompatActivity {
         EditText bewertungEditText = findViewById(R.id.edittextbewertung);
         bewertungEditText.setText(""+bewertung);
 
-
-
     }
 
     private void fillData() {
@@ -155,6 +151,7 @@ public class DetailScreen extends AppCompatActivity {
         abgeschlossen = data.getInt(8);
     }
 
+
     public void showPopup() {
         TextView txtclose;
         ImageView star1;
@@ -162,7 +159,6 @@ public class DetailScreen extends AppCompatActivity {
         ImageView star3;
         ImageView star4;
         ImageView star5;
-        int bewertung;
 
         myDialog.setContentView(R.layout.bewertung_popup);
         txtclose = (TextView) myDialog.findViewById(R.id.txtviewclose);
@@ -176,6 +172,66 @@ public class DetailScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 myDialog.dismiss();
+            }
+        });
+
+        star1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bewertung = 1;
+                String ID = Integer.toString(id);
+                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, abgeschlossen);
+
+                Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
+                startActivity(intent);
+            }
+        });
+
+        star2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bewertung = 2;
+                String ID = Integer.toString(id);
+                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, abgeschlossen);
+
+                Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
+                startActivity(intent);
+            }
+        });
+
+        star3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bewertung = 3;
+                String ID = Integer.toString(id);
+                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, abgeschlossen);
+
+                Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
+                startActivity(intent);
+            }
+        });
+
+        star4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bewertung = 4;
+                String ID = Integer.toString(id);
+                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, abgeschlossen);
+
+                Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
+                startActivity(intent);
+            }
+        });
+
+        star5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bewertung = 5;
+                String ID = Integer.toString(id);
+                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, abgeschlossen);
+
+                Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
+                startActivity(intent);
             }
         });
 
