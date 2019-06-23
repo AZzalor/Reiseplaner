@@ -44,9 +44,16 @@ public class DetailScreen extends AppCompatActivity {
         Button abbrechenButton = (Button) findViewById(R.id.detailAbbrechenButton);
         Button abgeschlossenButton = (Button) findViewById(R.id.abgeschlossenButton);
         Button deleteButton = (Button) findViewById(R.id.loeschenButton);
+        TextView bewertungtxt = (TextView) findViewById(R.id.bewertungtxtview);
+        EditText bewertungedttxt = (EditText) findViewById(R.id.edittextbewertung);
 
         if (abgeschlossen == 1){
             abgeschlossenButton.setVisibility(View.GONE);
+        }
+
+        if (abgeschlossen == 0){
+            bewertungtxt.setVisibility(View.GONE);
+            bewertungedttxt.setVisibility(View.GONE);
         }
 
 
