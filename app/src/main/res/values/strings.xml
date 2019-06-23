@@ -21,6 +21,6 @@
     <string name="loeschenButton">Löschen!</string>
 
     <string name="close">X</string>
-    <string name="bewertunglang">Wie würden Sie die abgeschlossene Reise bewerten?</string>
+    <string name="bewertunglang">Wie hat Ihnen die abgeschlossene Reise gefallen?</string>
 
 </resources>

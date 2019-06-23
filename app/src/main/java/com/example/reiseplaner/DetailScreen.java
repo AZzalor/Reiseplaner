@@ -121,7 +121,7 @@ public class DetailScreen extends AppCompatActivity {
         });
 
 
-        
+
         EditText landEditText = findViewById(R.id.detaillandEditText);
         landEditText.setText(land);
         EditText stadtEditText = findViewById(R.id.detailstadtEditText);
