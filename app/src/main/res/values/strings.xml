@@ -23,4 +23,10 @@
     <string name="close">X</string>
     <string name="bewertunglang">Wie hat Ihnen die abgeschlossene Reise gefallen?</string>
 
+    <!-- Manifest Title -->
+    <string name="offeneReise">Reiseziele</string>
+    <string name="abgeschlosseneReisen">abgeschlossene Reisen</string>
+    <string name="anlegenReise">Reise anlegen</string>
+    <string name="detailReise">Reisedetails</string>
+
 </resources>
