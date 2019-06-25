@@ -65,7 +65,7 @@ public class CreateScreen extends AppCompatActivity {
         });
 
     }
-
+    //legt ein neues Reiseziel mit den eingegebenen Daten an und speichert es in der Datenbank
     public void AddData(String Land, String Stadt, String Objekt, String Beschreibung,String Anreise, String Abreise){
         mDatabaseHelper.addData(Land, Stadt,Objekt, Beschreibung, Anreise, Abreise);
     }

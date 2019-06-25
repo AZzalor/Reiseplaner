@@ -38,6 +38,7 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
         customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
 
+        //Ruft DetailScreen auf und übergibt die jeweilige ID
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -49,7 +50,6 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
             }
         });
 
-
     }
 
     @Override
@@ -59,7 +59,7 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
         customAdapter.notifyDataSetChanged();
 
     }
-
+    //leert die Arrays und ruft fillData() auf
     public void updateData() {
         land.clear();
         stadt.clear();
@@ -67,7 +67,7 @@ public class ReisezieleAbgeschlossen extends AppCompatActivity {
 
         fillData();
     }
-
+    //sucht alle Reiseziele aus der Datenbank mit abgeschlossen == 1 und füllt die Arrays mit den jeweiligen Daten
     private void fillData(){
         Cursor data = mDatabaseHelper.getDataAbgeschlossen();
         while(data.moveToNext()){
