@@ -79,25 +79,25 @@ public class DetailScreen extends AppCompatActivity {
         switch (bewertung) {
 
             case 1:
-                detailstar2.setVisibility(View.GONE);
-                detailstar3.setVisibility(View.GONE);
-                detailstar4.setVisibility(View.GONE);
-                detailstar5.setVisibility(View.GONE);
+                detailstar2.setVisibility(View.INVISIBLE);
+                detailstar3.setVisibility(View.INVISIBLE);
+                detailstar4.setVisibility(View.INVISIBLE);
+                detailstar5.setVisibility(View.INVISIBLE);
                 break;
 
             case 2:
-                detailstar3.setVisibility(View.GONE);
-                detailstar4.setVisibility(View.GONE);
-                detailstar5.setVisibility(View.GONE);
+                detailstar3.setVisibility(View.INVISIBLE);
+                detailstar4.setVisibility(View.INVISIBLE);
+                detailstar5.setVisibility(View.INVISIBLE);
                 break;
 
             case 3:
-                detailstar4.setVisibility(View.GONE);
-                detailstar5.setVisibility(View.GONE);
+                detailstar4.setVisibility(View.INVISIBLE);
+                detailstar5.setVisibility(View.INVISIBLE);
                 break;
 
             case 4:
-                detailstar5.setVisibility(View.GONE);
+                detailstar5.setVisibility(View.INVISIBLE);
                 break;
 
         }
@@ -127,7 +127,13 @@ public class DetailScreen extends AppCompatActivity {
                 mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, abgeschlossen);
 
                 Intent intent = new Intent(DetailScreen.this, MainActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
+
+                if(abgeschlossen == 1) {
+                    startActivity(intent2);
+                } else {
+                    startActivity(intent);
+                }
             }
         });
 
@@ -135,8 +141,15 @@ public class DetailScreen extends AppCompatActivity {
            @Override
            public void onClick(View v) {
                Log.d("DetailScreen","ABBRECHEN onClick aufegrufen");
+
                Intent intent = new Intent(DetailScreen.this, MainActivity.class);
-               startActivity(intent);
+               Intent intent2 = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
+
+               if(abgeschlossen == 1) {
+                   startActivity(intent2);
+               } else {
+                   startActivity(intent);
+               }
            }
         });
 
