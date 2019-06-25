@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".DetailScreen"
-            android:label="@string/offeneReise"/>
+            android:label="@string/detailReise"/>
         <activity
             android:name=".CreateScreen"
             android:label="@string/anlegenReise"/>

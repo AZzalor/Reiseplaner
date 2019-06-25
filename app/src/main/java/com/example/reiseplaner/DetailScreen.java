@@ -51,6 +51,10 @@ public class DetailScreen extends AppCompatActivity {
         ImageView detailstar4 = (ImageView) findViewById(R.id.detailstar4);
         ImageView detailstar5 = (ImageView) findViewById(R.id.detailstar5);
 
+        /**
+         * Entfernt den abgeschlossen Button wenn Reise bereits abgeschlossen ist.
+         * verbietet das Bearbeiten von abgeschlossenen Reise (außer Beschreibung)
+         */
         if (abgeschlossen == 1){
             abgeschlossenButton.setVisibility(View.GONE);
             EditText landEditText = findViewById(R.id.detaillandEditText);
@@ -67,6 +71,9 @@ public class DetailScreen extends AppCompatActivity {
 
         }
 
+        /**
+         * Entfernt die Views der Sterne wenn die Reise noch nicht abgeschlossen ist.
+         */
         if (abgeschlossen == 0){
             bewertungtxt.setVisibility(View.GONE);
             detailstar1.setVisibility(View.GONE);
@@ -76,6 +83,9 @@ public class DetailScreen extends AppCompatActivity {
             detailstar5.setVisibility(View.GONE);
         }
 
+        /**
+         * Anzeige der Bewertung in Sternen
+         */
         switch (bewertung) {
 
             case 1:
