@@ -221,6 +221,9 @@ public class DetailScreen extends AppCompatActivity {
     }
 
 
+    /* Methode um das PopUp Fenster für die Bewertung darzustellen
+    In dieser Methode werden auch alle onClickListener für das PopUp festgelegt.
+     */
     public void showPopup() {
         TextView txtclose;
         ImageView star1;
@@ -237,6 +240,7 @@ public class DetailScreen extends AppCompatActivity {
         star4 = (ImageView) myDialog.findViewById(R.id.star4);
         star5 = (ImageView) myDialog.findViewById(R.id.star5);
 
+        // PopUp schließen
         txtclose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -244,6 +248,7 @@ public class DetailScreen extends AppCompatActivity {
             }
         });
 
+        // Bewertung der Reise
         star1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -304,7 +309,7 @@ public class DetailScreen extends AppCompatActivity {
             }
         });
 
-
+        // Anzeige des PopUps
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
     }
