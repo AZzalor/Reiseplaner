@@ -53,6 +53,18 @@ public class DetailScreen extends AppCompatActivity {
 
         if (abgeschlossen == 1){
             abgeschlossenButton.setVisibility(View.GONE);
+            EditText landEditText = findViewById(R.id.detaillandEditText);
+            EditText stadtEditText = findViewById(R.id.detailstadtEditText);
+            EditText objektEditText = findViewById(R.id.detailobjektEditText);
+            EditText anreiseEditText = findViewById(R.id.detailanreiseEditText);
+            EditText abreiseEditText = findViewById(R.id.detailabreiseEditText);
+
+            disableEditText(landEditText);
+            disableEditText(stadtEditText);
+            disableEditText(objektEditText);
+            disableEditText(anreiseEditText);
+            disableEditText(abreiseEditText);
+
         }
 
         if (abgeschlossen == 0){
@@ -174,6 +186,13 @@ public class DetailScreen extends AppCompatActivity {
         EditText abreiseEditText = findViewById(R.id.detailabreiseEditText);
         abreiseEditText.setText(abreise);
 
+    }
+
+    private void disableEditText(EditText editText) {
+        editText.setFocusable(false);
+        editText.setEnabled(false);
+        editText.setCursorVisible(false);
+        editText.setKeyListener(null);
     }
 
     private void fillData() {

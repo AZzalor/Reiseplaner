@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity{
         customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
 
-
+        //Ruft DetailScreen auf und übergibt die ID des jeweiligen
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
