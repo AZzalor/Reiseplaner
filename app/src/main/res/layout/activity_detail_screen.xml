@@ -112,12 +112,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/zeitraumLayout"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp">
 
             <TextView
                 android:id="@+id/bewertungtexttview"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginRight="25dp"
@@ -127,21 +128,46 @@
                 android:textSize="14sp"
                 android:textColor="@color/colorPrimaryDark"/>
 
-            <EditText
-                android:id="@+id/edittextbewertung"
-                android:layout_width="83dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:layout_marginRight="15dp"
-                android:inputType="number"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:textColor="@color/colorPrimaryDark"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="55dp"
-                android:src="@drawable/star"
-                android:layout_gravity="bottom"/>
+                <ImageView
+                    android:id="@+id/detailstar1"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/star"/>
+
+                <ImageView
+                    android:id="@+id/detailstar2"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/star"/>
+
+                <ImageView
+                    android:id="@+id/detailstar3"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/star"/>
+
+                <ImageView
+                    android:id="@+id/detailstar4"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/star"/>
+
+                <ImageView
+                    android:id="@+id/detailstar5"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/star"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

@@ -45,7 +45,11 @@ public class DetailScreen extends AppCompatActivity {
         Button abgeschlossenButton = (Button) findViewById(R.id.abgeschlossenButton);
         Button deleteButton = (Button) findViewById(R.id.loeschenButton);
         TextView bewertungtxt = (TextView) findViewById(R.id.bewertungtexttview);
-        EditText bewertungedttxt = (EditText) findViewById(R.id.edittextbewertung);
+        ImageView detailstar1 = (ImageView) findViewById(R.id.detailstar1);
+        ImageView detailstar2 = (ImageView) findViewById(R.id.detailstar2);
+        ImageView detailstar3 = (ImageView) findViewById(R.id.detailstar3);
+        ImageView detailstar4 = (ImageView) findViewById(R.id.detailstar4);
+        ImageView detailstar5 = (ImageView) findViewById(R.id.detailstar5);
 
         if (abgeschlossen == 1){
             abgeschlossenButton.setVisibility(View.GONE);
@@ -53,7 +57,37 @@ public class DetailScreen extends AppCompatActivity {
 
         if (abgeschlossen == 0){
             bewertungtxt.setVisibility(View.GONE);
-            bewertungedttxt.setVisibility(View.GONE);
+            detailstar1.setVisibility(View.GONE);
+            detailstar2.setVisibility(View.GONE);
+            detailstar3.setVisibility(View.GONE);
+            detailstar4.setVisibility(View.GONE);
+            detailstar5.setVisibility(View.GONE);
+        }
+
+        switch (bewertung) {
+
+            case 1:
+                detailstar2.setVisibility(View.GONE);
+                detailstar3.setVisibility(View.GONE);
+                detailstar4.setVisibility(View.GONE);
+                detailstar5.setVisibility(View.GONE);
+                break;
+
+            case 2:
+                detailstar3.setVisibility(View.GONE);
+                detailstar4.setVisibility(View.GONE);
+                detailstar5.setVisibility(View.GONE);
+                break;
+
+            case 3:
+                detailstar4.setVisibility(View.GONE);
+                detailstar5.setVisibility(View.GONE);
+                break;
+
+            case 4:
+                detailstar5.setVisibility(View.GONE);
+                break;
+
         }
 
 
@@ -74,8 +108,6 @@ public class DetailScreen extends AppCompatActivity {
                 anreise = anreiseEditText.getText().toString();
                 EditText abreiseEditText = findViewById(R.id.detailabreiseEditText);
                 abreise = abreiseEditText.getText().toString();
-                EditText bewertungEditText = findViewById(R.id.edittextbewertung);
-                bewertungEditText.getText().toString();
 
 
                 String ID = Integer.toString(id);
@@ -141,8 +173,6 @@ public class DetailScreen extends AppCompatActivity {
         anreiseEditText.setText(anreise);
         EditText abreiseEditText = findViewById(R.id.detailabreiseEditText);
         abreiseEditText.setText(abreise);
-        EditText bewertungEditText = findViewById(R.id.edittextbewertung);
-        bewertungEditText.setText(""+bewertung);
 
     }
 
