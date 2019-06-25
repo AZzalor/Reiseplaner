@@ -44,7 +44,7 @@ public class DetailScreen extends AppCompatActivity {
         Button abbrechenButton = (Button) findViewById(R.id.detailAbbrechenButton);
         Button abgeschlossenButton = (Button) findViewById(R.id.abgeschlossenButton);
         Button deleteButton = (Button) findViewById(R.id.loeschenButton);
-        TextView bewertungtxt = (TextView) findViewById(R.id.bewertungtxtview);
+        TextView bewertungtxt = (TextView) findViewById(R.id.bewertungtexttview);
         EditText bewertungedttxt = (EditText) findViewById(R.id.edittextbewertung);
 
         if (abgeschlossen == 1){
@@ -105,10 +105,10 @@ public class DetailScreen extends AppCompatActivity {
                 String ID = Integer.toString(id);
                 mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, 1);
 
-                // showPopup();
+                showPopup();
 
-                Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
-                startActivity(intent);
+                //Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
+                //startActivity(intent);
             }
         });
 
@@ -187,7 +187,7 @@ public class DetailScreen extends AppCompatActivity {
             public void onClick(View v) {
                 bewertung = 1;
                 String ID = Integer.toString(id);
-                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, abgeschlossen);
+                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, 1);
 
                 Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
                 startActivity(intent);
@@ -199,7 +199,7 @@ public class DetailScreen extends AppCompatActivity {
             public void onClick(View v) {
                 bewertung = 2;
                 String ID = Integer.toString(id);
-                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, abgeschlossen);
+                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, 1);
 
                 Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
                 startActivity(intent);
@@ -211,7 +211,7 @@ public class DetailScreen extends AppCompatActivity {
             public void onClick(View v) {
                 bewertung = 3;
                 String ID = Integer.toString(id);
-                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, abgeschlossen);
+                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, 1);
 
                 Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
                 startActivity(intent);
@@ -223,7 +223,7 @@ public class DetailScreen extends AppCompatActivity {
             public void onClick(View v) {
                 bewertung = 4;
                 String ID = Integer.toString(id);
-                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, abgeschlossen);
+                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, 1);
 
                 Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
                 startActivity(intent);
@@ -235,7 +235,7 @@ public class DetailScreen extends AppCompatActivity {
             public void onClick(View v) {
                 bewertung = 5;
                 String ID = Integer.toString(id);
-                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, abgeschlossen);
+                mDatabaseHelper.updateData(ID, land, stadt, objekt, beschreibung, anreise, abreise, bewertung, 1);
 
                 Intent intent = new Intent(DetailScreen.this, ReisezieleAbgeschlossen.class);
                 startActivity(intent);
