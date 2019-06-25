@@ -111,12 +111,22 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
+    /**
+     * legt das Menü in der Actionbar an
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_actionbar, menu);
         return true;
     }
 
+    /**
+     * legt fest welche Symbol des Menüs in der Actionbar sichtbar sind
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

@@ -70,13 +70,22 @@ public class CreateScreen extends AppCompatActivity {
         mDatabaseHelper.addData(Land, Stadt,Objekt, Beschreibung, Anreise, Abreise);
     }
 
-    // Actionbar
+    /**
+     * legt das Menü in der Actionbar an
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_actionbar_createscreen, menu);
         return true;
     }
 
+    /**
+     * legt fest welche Symbol des Menüs in der Actionbar sichtbar sind
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
