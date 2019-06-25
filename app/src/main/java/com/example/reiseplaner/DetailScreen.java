@@ -53,7 +53,7 @@ public class DetailScreen extends AppCompatActivity {
 
         /**
          * Entfernt den abgeschlossen Button wenn Reise bereits abgeschlossen ist.
-         * verbietet das Bearbeiten von abgeschlossenen Reise (außer Beschreibung)
+         * verbietet das Bearbeiten von abgeschlossenen Reisen (außer Beschreibung)
          */
         if (abgeschlossen == 1){
             abgeschlossenButton.setVisibility(View.GONE);
