@@ -30,6 +30,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * Anlegen der Tabelle
+     * @param db
+     */
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTable = "create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY, " +
@@ -44,6 +48,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(createTable);
     }
 
+    /**
+     * Tabelle neu erstellen
+     * @param db
+     * @param oldVersion
+     * @param newVersion
+     */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);

@@ -221,9 +221,9 @@ public class DetailScreen extends AppCompatActivity {
     }
 
 
-    /* Methode um das PopUp Fenster für die Bewertung darzustellen
+    /** Methode um das PopUp Fenster für die Bewertung darzustellen
     In dieser Methode werden auch alle onClickListener für das PopUp festgelegt.
-     */
+     **/
     public void showPopup() {
         TextView txtclose;
         ImageView star1;
