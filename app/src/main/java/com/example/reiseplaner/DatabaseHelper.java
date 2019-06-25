@@ -151,7 +151,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "select * from " + TABLE_NAME + " where ID = '" + id + "'";
         Cursor data = db.rawQuery(query, null);
-        //data.moveToFirst();
+        data.moveToFirst();
         return data;
     }
 
