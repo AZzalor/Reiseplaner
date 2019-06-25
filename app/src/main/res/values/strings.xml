@@ -3,7 +3,7 @@
 
     <!-- Action Bar Strings -->
     <string name="action_reiseziele">Reiseziele</string>
-    <string name="action_abg_reiseziele">abgeschlossene Reiseziele</string>
+    <string name="action_abg_reiseziele">Abgeschlossene Reiseziele</string>
     <string name="action_add">Add</string>
 
     <!-- Texte für Screens -->
