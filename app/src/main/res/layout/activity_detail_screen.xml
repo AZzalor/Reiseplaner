@@ -137,6 +137,12 @@
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:textColor="@color/colorPrimaryDark"/>
 
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="55dp"
+                android:src="@drawable/star"
+                android:layout_gravity="bottom"/>
+
         </LinearLayout>
 
         <LinearLayout
