@@ -153,7 +153,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME;
         Cursor data = db.rawQuery(query, null);
-        //data.moveToFirst();
         return data;
     }
 
@@ -169,7 +168,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "select * from " + TABLE_NAME + " where ABGESCHLOSSEN = '1'";
         Cursor data = db.rawQuery(query, null);
-        //data.moveToFirst();
         return data;
     }
 
@@ -177,7 +175,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "select * from " + TABLE_NAME + " where ABGESCHLOSSEN = '0'";
         Cursor data = db.rawQuery(query, null);
-        //data.moveToFirst();
         return data;
     }
 

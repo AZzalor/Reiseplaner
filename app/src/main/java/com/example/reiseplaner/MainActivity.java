@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity{
 
         customAdapter.notifyDataSetChanged();
     }
-
+    //Leer die Arrays und ruft fillData() auf
     public void updateData() {
 
         landArrayList.clear();
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity{
 
        fillData();
     }
-
+    //Sucht alle Reiseziele mit "abgeschlossen == 0" unnd füllt die Arrays mit den Daten
     private void fillData(){
         Cursor data = mDatabaseHelper.getDataOffen();
         while(data.moveToNext()){
